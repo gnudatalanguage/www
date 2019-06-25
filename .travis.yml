@@ -6,5 +6,5 @@ install:
 script:
     - travis-sphinx build
 
-after_success:
+deploy:
     - travis-sphinx deploy
