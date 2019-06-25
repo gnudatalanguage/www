@@ -1,8 +1,8 @@
 language: python
 
 branches:
-  only:
-    - source
+    only:
+        - source
 
 install:
     - pip install Sphinx travis-sphinx sphinx_rtd_theme
