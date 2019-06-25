@@ -1,7 +1,7 @@
 language: python
 
 install:
-    - pip install Sphinx travis-sphinx
+    - pip install Sphinx travis-sphinx sphinx_rtd_theme
 
 script:
     - travis-sphinx build
