@@ -1,5 +1,5 @@
 #!/bin/bash
-cd docs/source
+cd src
 rm -fr gdl.wiki
 git clone https://github.com/gnudatalanguage/gdl.wiki
 cd gdl.wiki
