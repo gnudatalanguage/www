@@ -1,0 +1,77 @@
+{#
+    layout.html
+    ~~~~~~~~~~~~~~~~~
+
+    Sphinx layout template for gnudatalanguage.github.io, based on old GDL website.
+
+    :author: Jeongbin Park
+    :license: CC BY-SA
+#}
+{%- extends "!layout.html" %}
+{%- set rellinks = [] %}
+
+{%- block htmltitle %}
+<title>{{ shorttitle|e }}</title>
+{%- endblock %}
+
+{% block header %}
+  <div id="wrap">
+    <div id="header">
+      <h1 id="logo-text"><a href="index.html">{{ shorttitle|e }}</a></h1>
+      <p id="intro">
+        A free and open-source IDL<sup>®*</sup>/PV-WAVE<sup>**</sup> compiler<br>
+        <small>
+          * IDL is a registered trademark of <a
+            href="http://exelisvis.com/">Exelis Visual Information
+            Solutions</a><br>
+          ** PV-WAVE is a product of <a href="http://roguewave.com/">Rogue Wave
+            Software</a>
+        </small><br>
+      </p>
+      <div id="nav">
+        <ul>
+          <li><a href="{{ pathto('index') }}">Main</a></li>
+          <li><a href="{{ pathto('screenshots') }}">Screenshots</a></li>
+          <li><a href="{{ pathto('downloads') }}">Downloads</a></li>
+          <li><a href="{{ pathto('wiki') }}">Wiki</a></li>
+        </ul>
+      </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div id="content-wrap">
+      <div id="main">
+        {%- block document %}
+          {{ super() }}
+        {%- endblock %}
+      </div>
+      <div id="sidebar">
+        <h3 style="margin-top: 1.5em;">Navigation</h3>
+        {{ toctree() }}
+        <div role="search">
+          <h3 style="margin-top: 1.5em;">{{ _('Search') }}</h3>
+          <form class="search" action="{{ pathto('search') }}" method="get">
+              <input type="text" name="q" />
+              <input type="submit" value="{{ _('Go') }}" />
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div id="footer-wrap">
+      <div id="footer-content">
+        <p>
+          Website content is developed by The GDL Team and is released under the CC BY-SA license (i.e. Wikipedia compatible)<br>
+          GDL documentation is a part of the GDL project and is released under the GNU General Public License<br>
+          Website layout based on the <strong>Colourise</strong> template by <a href="http://www.styleshout.com/">styleshout.com</a><br>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block relbar1 %}{% endblock %}
+{% block relbar2 %}{% endblock %}

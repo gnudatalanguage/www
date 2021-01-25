@@ -5,9 +5,11 @@ branches:
         - source
 
 install:
-    - pip install Sphinx travis-sphinx sphinx_rtd_theme
+    - pip install Sphinx travis-sphinx recommonmark
 
 script:
+    - .ci/retrieve_readme.sh
+    - .ci/retrieve_wiki.sh
     - travis-sphinx build
 
 after_success:
