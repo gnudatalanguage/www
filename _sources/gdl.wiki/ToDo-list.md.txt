@@ -1,0 +1,15 @@
+# ToDo list
+Some details are still not fixed on GDL.
+
+- adding testsuite to the packages
+
+- maintaining up-to-date packaging on OSX. 
+- Widgets on OSX (on local and also through remote with ssh -X)
+
+- Widgets on MSwin -- they are there but need some polishing.
+- packaging on MSwin (how to download it ? how to use it)
+
+- better managing of OpenMP on OSX (trying harder to detect & use it)
+- robust detection of Readline files to avoid mixing with Editline (esp. on OSX)
+
+- page by page HELP (as it is now available for HELP, /recall_com)

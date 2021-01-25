@@ -1,0 +1,42 @@
+# GDL on Linux
+## packages:
+
+- Fedora: https://src.fedoraproject.org/rpms/gdl
+- Debian: 
+  - https://packages.debian.org/sid/gnudatalanguage
+  - https://packages.debian.org/python3-gdl
+- Ubuntu:
+  - http://packages.ubuntu.com/gnudatalanguage
+  - https://packages.ubuntu.com/python3-gdl
+- Gentoo:
+  - https://packages.gentoo.org/packages/dev-lang/gdl
+- Arch:
+  - https://aur.archlinux.org/packages/gnudatalanguage/
+
+## compilation:
+
+- GDL is written in such a way you can compile it fully in user space, without being _root_, as long as all the mandatory packages (-dev/-devel) are around. If some packages are missing or outdated (e.g. Eigen3), yes, you can use a version in your user space, giving the path as a parameter to CMake (e.g. -DEIGEN3DIR=/path/to/local/Eigen3) 
+
+- GDL can be compile with : GCC (GNU C Compiler), Clang (LLVM), icc (Intel C compiler)
+
+- GDL now requests CMake 3+. On some old systems (Debian 9, U 14.04) you have access to CMake 3+ with package cmake3 or equivalent module (on HPC with module) 
+
+- please note that two scripts, in the directory scripts/ can help you to prepare the future compilation of GDL
+  -- _./aptget4gdl.sh_ will return most of the packages need on Debian and Ubuntu systems. The list is not absolutely realiable (help welcome) because the names of package are changing and may be different on distribution. One classical example is the GSL. Another one is libreadline-gplv2-dev or libreadline-dev : you need only one of the two. Plplot also is 
+  -- _./rpm4gdl.sh_ is the same for RH, CentOS, SciLinux, Fedora like systems.
+
+- When compiling the first time, you may be blocked because one package is missing. After installing it, it is **mandatory** to clean the cache before running again cmake (rm -f CMakeCache.txt)
+
+- Compilation. Once all the packages are around, it is quite fast on multicores :)
+
+```
+git clone https://github.com/gnudatalanguage/gdl
+cd gdl
+mkdir build
+cd build
+cmake ..
+make -j N  (N depending the number of cores you have)
+make check
+```
+(on my old laptop with N=4, less than 5 minutes)
+

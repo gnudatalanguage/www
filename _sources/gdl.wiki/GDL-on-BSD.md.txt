@@ -1,0 +1,4 @@
+# GDL on BSD
+## ports
+
+- FreeBSD: https://svnweb.freebsd.org/ports/head/science/gnudatalanguage/

@@ -1,0 +1,7 @@
+# Known issues
+- In presence of Anaconda (a python installer) ther may be some troubles compiling GDL, see [here](https://github.com/gnudatalanguage/gdl/issues/780#issuecomment-642943543)
+
+- old GCC. It is still possible to compile GDL 1.0 versions (rc1, rc2, rc3) with old GC 4.8 versions (e.g. gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4)  but it may give few troubles on few numerics, as shown by _make check_ 
+
+- up to now we never solved the fact that on some computers on long int (Long64, ULong, Ulong64 ...) 
+_test\_fix.pro_ may fail or not

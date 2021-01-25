@@ -1,0 +1,10 @@
+# C Compilers
+- GDL can be compile with : GCC (GNU C Compiler), Clang (LLVM), icc (Intel C compiler).
+
+- no significant differences in performances have been shown between the three on same computer. What is critical for the benchmaks is to activate OpenMP on multicores, and to compile with Eigen3 !!
+
+- using CMake flags, it is quite easy to switch from one compiler to another. E.g. for CLang.
+
+```
+CC=clang CXX=clang++ cmake ..
+```

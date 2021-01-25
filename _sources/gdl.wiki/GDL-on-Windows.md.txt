@@ -1,0 +1,47 @@
+# GDL on Windows
+## Nightly builds
+Builds of GDL from the master branch of GitHub repository are available (both 64-bit and 32-bit builds, both Debug and Release configurations) on the Github Actions page, at https://github.com/gnudatalanguage/gdl/actions (click on a workflow result, then download ```GDL``` or ```GDL Installer```)
+
+The easiest way to get GDL running is via ```GDL Installer```. It will install GDL on your machine automatically. For 64 bit builds, you can also choose whether to install ```GDL Workbench```, an Eclipse-based IDE for GDL (for more information, visit https://github.com/gnudatalanguage/gdlde).
+
+Currently, there are three different types of builds:
+- mini: only includes mandatory libraries to run GDL.
+- full: includes all optional libraries except MPI.
+- full-msmpi: includes all optional libraries + MPI. This requires Microsoft MPI pre-installed (https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi).
+
+## Compilation
+
+To compile GDL locally, follow the below steps:
+1. Download and install MSYS2, and run bash.
+2. Set environment variables.
+```shell
+$ export ROOT_DIR=/path/to/store/everything
+$ export Platform=x86_64 # or 'i686' for 32 bit build
+$ export DEPS=full-msmpi # or 'full' or 'mini'
+$ export Configuration=Release # or 'Debug'
+```
+2. Install packages to compile GDL.
+```shell
+$ pacman -S mingw-w64-${Platform}-toolchain mingw-w64-${Platform}-cmake mingw-w64-${Platform}-nsis zip unzip tar zstd make git
+```
+3. cd to `ROOT_DIR` and clone GDL.
+```shell
+$ cd $ROOT_DIR
+$ git clone https://github.com/gnudatalanguage/gdl
+```
+2. Build GDL:
+```shell
+$ gdl/.ci/build_gdl_windows.msys prep # download external libararies
+$ gdl/.ci/build_gdl_windows.msys build # build GDL
+$ ls install # compiled results will be here
+```
+3. (Optional) run tests:
+```shell
+$ gdl/.ci/build_gdl_windows.msys check
+```
+4. (Optional) package GDL into zip and NSIS installer:
+```shell
+$ export GDLDE_VERSION=untagged-6774c6ca2a5e657f4ac6 # replace this with any newer release
+$ gdl/.ci/build_gdl_windows.msys pack
+$ ls package # packages will be here
+```

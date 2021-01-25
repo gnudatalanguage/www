@@ -1,0 +1,32 @@
+# GDL on OSX
+## packages
+
+GDL is available from:
+- Homebrew: https://github.com/brewsci/homebrew-science/blob/master/Formula/gnudatalanguage.rb
+- Macports: https://github.com/macports/macports-ports/tree/master/math/gnudatalanguage
+- Fink: http://finkproject.org/pdb/package.php/gdl
+
+## compilation
+
+We have various difficult points when compiling GDL from source : 
+ - activating OpenMP. Depending of OSX version, default Clang may or not come with OpenMP. If OpenMP is not around, we need to deactivated it : 
+```
+cmake . [others flags] -DOPENMP=OFF
+```
+
+ - activating Readline. Editline is not fully compliant with Readline but it wrongly made symbolic links with readline headers files. Very dangerous. You must install a clean Readline lib. around (the one provided by Brew is OK) then cleanly link to it : 
+```
+cmake . [others flags] -DREADLINEDIR=/usr/local/opt/readline/
+```
+An example working (tested) on OSX 10.11, 10.12 & 10.14 (with Readline provided by Brew, and Cmake >= 3.0) : 
+
+```
+git clone https://github.com/gnudatalanguage/gdl
+cd gdl
+mkdir build
+cd build
+cmake .. -DREADLINEDIR=/usr/local/opt/readline/ -DOPENMP=OFF -DWXWIDGETS=OFF
+-DGEOTIFF=OFF  -DHDF=OFF  -DUDUNITS2=OFF -DPSLIB=OFF -DGRIB=off -DGLPK=OFF
+make -j 4
+make check  (few tests will fail)
+```
