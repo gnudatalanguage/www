@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -23,6 +25,7 @@ jobs:
           .ci/retrieve_wiki.sh
           sphinx-build src build
       - name: Deploy
+        if: github.ref == 'refs/heads/source'
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
