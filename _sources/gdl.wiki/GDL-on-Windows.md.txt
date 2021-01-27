@@ -1,6 +1,11 @@
 # GDL on Windows
+## Download Binaries
+
+- Nightly builds (see also `Nightly builds` section below)
+  - https://github.com/gnudatalanguage/gdl/actions (click on a workflow result, then download ```GDL``` or ```GDL Installer```)
+
 ## Nightly builds
-Builds of GDL from the master branch of GitHub repository are available (both 64-bit and 32-bit builds, both Debug and Release configurations) on the Github Actions page, at https://github.com/gnudatalanguage/gdl/actions (click on a workflow result, then download ```GDL``` or ```GDL Installer```)
+Builds of GDL from the master branch of GitHub repository are available (both 64-bit and 32-bit builds, both Debug and Release configurations) on the Github Actions page, at https://github.com/gnudatalanguage/gdl/actions.
 
 The easiest way to get GDL running is via ```GDL Installer```. It will install GDL on your machine automatically. For 64 bit builds, you can also choose whether to install ```GDL Workbench```, an Eclipse-based IDE for GDL (for more information, visit https://github.com/gnudatalanguage/gdlde).
 
