@@ -70,6 +70,8 @@ GDL features integrated debugging facilities.
 The built-in widget functionality enables development of GUI-based software.
 GDL has also a Python bridge (Python code can be called from GDL; GDL can be compiled as a Python module).
 Development and maintenance of GDL is carried out targeting Linux, BSD, OSX and Windows (MinGW, Cygwin).</p>
+<p>GDL is invoked just by typing <code class="docutils literal notranslate"><span class="pre">gdl</span></code> but see <code class="docutils literal notranslate"><span class="pre">gdl</span> <span class="pre">-h</span></code> as it has a number of commandline options.
+GDL may be known as <code class="docutils literal notranslate"><span class="pre">gnudl</span></code> or <code class="docutils literal notranslate"><span class="pre">gnudatalanguage</span></code> on some operating systems.</p>
 <p>Other open-source numerical data analysis tools similar to GDL include
 <a class="reference external" href="http://www.scipy.org/">SciPy</a>,
 <a class="reference external" href="http://www.gnu.org/software/octave/">GNU Octave</a>,
@@ -93,30 +95,39 @@ Development and maintenance of GDL is carried out targeting Linux, BSD, OSX and 
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
 <p>Packaged versions of GDL are available for several Linux distributions, BSD and Mac OS X.
 Please note that several features of GDL depend on compile-time configuration, and might not
-be available in pre-built or pre-configured packages.
-GDL has numerous dependencies, most of the optional (buth highly recommended):</p>
+be available in pre-built or pre-configured packages.</p>
+<p>GDL has numerous dependencies, most of the optional but highly recommended if you want it to be areally useful tool.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://tiswww.cwru.edu/php/chet/readline/rltop.html">readline</a></p></li>
-<li><p><a class="reference external" href="https://www.gnu.org/software/ncurses/">[n]curses</a></p></li>
-<li><p><a class="reference external" href="https://zlib.net/">zlib</a></p></li>
-<li><p><a class="reference external" href="https://www.gnu.org/software/gsl/">GSL</a></p></li>
-<li><p><a class="reference external" href="http://www.openmp.org/">OpenMP</a></p></li>
-<li><p><a class="reference external" href="https://imagemagick.org/">Magick++</a> / <a class="reference external" href="http://graphicsmagick.org/">GraphicsMagick</a></p></li>
-<li><p><a class="reference external" href="https://www.wxwidgets.org/">wxWidgets</a></p></li>
-<li><p><a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/">netCDF</a></p></li>
-<li><p><a class="reference external" href="https://support.hdfgroup.org/products/hdf4/">HDF4</a></p></li>
-<li><p><a class="reference external" href="https://support.hdfgroup.org/HDF5/">HDF5</a></p></li>
-<li><p><a class="reference external" href="http://www.fftw.org/">FFTW</a></p></li>
-<li><p><a class="reference external" href="http://proj4.org/">PROJ.4</a></p></li>
-<li><p><a class="reference external" href="http://shapelib.maptools.org/">Shapelib</a></p></li>
-<li><p><a class="reference external" href="https://libexpat.github.io/">Expat</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Message_Passing_Interface">MPI</a></p></li>
-<li><p><a class="reference external" href="https://www.python.org/">Python</a>/<a class="reference external" href="http://www.numpy.org/">NumPy</a></p></li>
-<li><p><a class="reference external" href="https://www.unidata.ucar.edu/software/udunits/">udunits</a></p></li>
-<li><p><a class="reference external" href="https://eigen.tuxfamily.org/">Eigen</a></p></li>
-<li><p><a class="reference external" href="http://pslib.sourceforge.net/">pslib</a></p></li>
-<li><p><a class="reference external" href="https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home">ecCodes</a>/<a class="reference external" href="https://software.ecmwf.int/wiki/display/GRIB">GRIB</a></p></li>
-<li><p><a class="reference external" href="https://www.gnu.org/software/glpk/">GLPK</a></p></li>
+<li><p><a class="reference external" href="https://tiswww.cwru.edu/php/chet/readline/rltop.html">readline</a> mandatory. For easy command line editing, recalling, history.</p></li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/ncurses/">[n]curses</a> mandatory. Terminal management.</p></li>
+<li><p><a class="reference external" href="https://zlib.net/">zlib</a> mandatory. compressed file access.</p></li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/gsl/">GSL</a> mandatory, for many math functions.</p></li>
+<li><p><a class="reference external" href="http://www.openmp.org/">OpenMP</a> optional, but speed will suffer if not present</p></li>
+<li><p><a class="reference external" href="https://imagemagick.org/">Magick++</a> / <a class="reference external" href="http://graphicsmagick.org/">GraphicsMagick</a> optional, but don’t you want to read/write many image formats?</p></li>
+<li><p><a class="reference external" href="https://www.wxwidgets.org/">wxWidgets</a> mandatory unless you do not want graphic outputs and widgets?</p></li>
+<li><p><a class="reference external" href="https://sourceforge.net/projects/libx11/">Xlib/X11</a> not used unless you explictly ask for it (replaced by wxWidgets for sake of compatibility on Windows, linux and MacOSX.</p></li>
+<li><p><a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/">netCDF</a> optional, but useful for reading this kind of data.</p></li>
+<li><p><a class="reference external" href="https://support.hdfgroup.org/products/hdf4/">HDF4</a>  optional, but useful for reading this kind of data.</p></li>
+<li><p><a class="reference external" href="https://support.hdfgroup.org/HDF5/">HDF5</a>   optional, but useful for reading this kind of data.</p></li>
+<li><p><a class="reference external" href="http://www.fftw.org/">FFTW</a> optional, but don’t you need a fast fft at times?</p></li>
+<li><p><a class="reference external" href="http://proj.org/">PROJ</a> optional but forget about mapping capabilities if absent.</p></li>
+<li><p><a class="reference external" href="http://shapelib.maptools.org/">Shapelib</a> optional but forget about mapping capabilities if absent.</p></li>
+<li><p><a class="reference external" href="https://libexpat.github.io/">Expat</a> optional but helps implement IDLffXMLSAX parser objects.</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Message_Passing_Interface">MPI</a> optional but provides clustering facilities.</p></li>
+<li><p><a class="reference external" href="https://www.python.org/">Python</a>/<a class="reference external" href="http://www.numpy.org/">NumPy</a> optional but add python bridge and jupyter notebook.</p></li>
+<li><p><a class="reference external" href="https://www.unidata.ucar.edu/software/udunits/">udunits</a> optional, units conversion</p></li>
+<li><p><a class="reference external" href="https://eigen.tuxfamily.org/">Eigen</a> optional but provides inordiante speed enhancements…</p></li>
+<li><p><a class="reference external" href="https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home">ecCodes</a>/<a class="reference external" href="https://software.ecmwf.int/wiki/display/GRIB">GRIB</a> optional, for GRIB API support.</p></li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/glpk/">GLPK</a> optional, provides the SIMPLEX command.</p></li>
+</ul>
+<p>Besides, for optimal use (speed mainly), GDL incorporates slightly edited code of</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/SFMT">dSFMT</a> as our parallel random Generator.</p></li>
+<li><p><a class="reference external" href="https://github.com/mapbox/delaunator">delaunator</a> as our new hyperfast triangulation.</p></li>
+<li><p><a class="reference external" href="https://www.antlr3.org/">ANTLR3</a> as interpretor.</p></li>
+<li><p><a class="reference external" href="http://nomis80.org/ctmf.html">Median Filtering</a></p></li>
+<li><p><a class="reference external" href="http://users.ics.aalto.fi/suomela">Median Filtering</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Pierre-Terdiman/RadixRedux">Radix Sorting</a> (we have written all variants up to doubles).</p></li>
 </ul>
 </div>
 <div class="section" id="build-time-dependencies">
@@ -138,7 +149,7 @@ by providing enhancements and extensions of the README files, diagnostic message
 <p>Among the major challenges GDL development is facing currently, there are:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://codecov.io/github/gnudatalanguage/gdl?branch=master">enhancing test coverage</a> by writing test programs in GDL</p></li>
-<li><p>streamlining development and maintainance of GDL reference docs and examples (using the <a class="reference external" href="https://github.com/gnudatalanguage/idl_kernel">Jupyter kernel</a>?)</p></li>
+<li><p>streamlining development and maintenance of GDL reference docs and examples (using the <a class="reference external" href="https://github.com/gnudatalanguage/idl_kernel">Jupyter kernel</a>?)</p></li>
 <li><p>bringing in into the team the needed know-how to address the <a class="reference external" href="https://github.com/gnudatalanguage/gdl/labels/antlr">backlog of ANTLR-related issues</a></p></li>
 <li><p>increasing presence within and interoperability with the Python ecosystem, including adding support for Python 3 (calling GDL from Python 2 and calling Python 2 from GDL is already implemented!)</p></li>
 </ul>
@@ -169,7 +180,7 @@ These include:</p>
 <li><p>IDL <a class="reference external" href="https://github.com/vim/vim/blob/master/runtime/syntax/idlang.vim">syntax highlighting module for Vim</a></p></li>
 <li><p>the <a class="reference external" href="https://github.com/vim-scripts/SingleCompile">SingleCompile extension for Vim</a></p></li>
 </ul>
-<p>Alain Coulais maintains the <a class="reference external" href="https://sympa.obspm.fr/wws/info/gdl-announces">GDL-accounces mailing list</a>.</p>
+<p>Alain Coulais maintains the <a class="reference external" href="https://sympa.obspm.fr/wws/info/gdl-announces">GDL-announces mailing list</a>.</p>
 <p>There have been quite some <a class="reference external" href="https://scholar.google.com/scholar?q=%22gnu+data+language%22">mentions of GDL in scientific literature</a>
 which also provide example use cases.
 The Coulais et al. papers from the ADASS conferences are the best way to cite GDL as of now.</p>
