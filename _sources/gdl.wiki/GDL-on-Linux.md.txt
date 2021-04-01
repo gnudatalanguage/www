@@ -1,23 +1,29 @@
 # GDL on Linux
 ## packages:
 
-- Fedora: https://src.fedoraproject.org/rpms/gdl
+- Fedora: https://src.fedoraproject.org/rpms/gdl actively maintained.
 - Debian: 
-  - https://packages.debian.org/sid/gnudatalanguage
-  - https://packages.debian.org/python3-gdl
+  - https://packages.debian.org/sid/gnudatalanguage 0.9.9 too OLD
+  - https://packages.debian.org/python3-gdl idem
 - Ubuntu:
-  - http://packages.ubuntu.com/gnudatalanguage
-  - https://packages.ubuntu.com/python3-gdl
+  - http://packages.ubuntu.com/gnudatalanguage 0.9.6 TOTALLY OBSOLETE
+  - https://packages.ubuntu.com/python3-gdl idem
 - Gentoo:
-  - https://packages.gentoo.org/packages/dev-lang/gdl
+  - https://packages.gentoo.org/packages/dev-lang/gdl a 1.0.0 is available! Yepee!
 - Arch:
-  - https://aur.archlinux.org/packages/gnudatalanguage/
+  - https://aur.archlinux.org/packages/gnudatalanguage/ **0.9.5 world record in obsolescence.**
+
+**Beware, these version are mostly too old.**
+
+Better to recompile GDL with all dependencies freshly updated.
+You will **NEED the wxWidgets library and the plplot drivers for wxWidgets**
+Eventually, you could build gdl with the option "-DINTERACTIVE_GRAPHICS=OFF' to enable compilation without warnings related to the absence of the adequate plplot driver, but GDL may be unable to open a graphic windows. Sometimes, plplot drivers for wxWindows or Xwin (X11) may be in a separate package, say, `plplot-driver-wxwidgets` . We appreciate returns to update this documentation.
 
 ## compilation:
 
 - GDL is written in such a way you can compile it fully in user space, without being _root_, as long as all the mandatory packages (-dev/-devel) are around. If some packages are missing or outdated (e.g. Eigen3), yes, you can use a version in your user space, giving the path as a parameter to CMake (e.g. -DEIGEN3DIR=/path/to/local/Eigen3) 
 
-- GDL can be compile with : GCC (GNU C Compiler), Clang (LLVM), icc (Intel C compiler)
+- GDL can be compiled with : GCC (GNU C Compiler), Clang (LLVM), icc (Intel C compiler)
 
 - GDL now requests CMake 3+. On some old systems (Debian 9, U 14.04) you have access to CMake 3+ with package cmake3 or equivalent module (on HPC with module) 
 

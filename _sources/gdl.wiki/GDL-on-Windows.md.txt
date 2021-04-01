@@ -2,7 +2,7 @@
 ## Download Binaries
 
 - Nightly builds (see also `Nightly builds` section below)
-  - https://github.com/gnudatalanguage/gdl/actions (click on a workflow result, then download ```GDL``` or ```GDL Installer```)
+  - https://github.com/gnudatalanguage/gdl/actions (click on a workflow result, then 'ARTIFACTS' section, and download ```GDL``` or ```GDL Installer```)
 
 ## Nightly builds
 Builds of GDL from the master branch of GitHub repository are available (both 64-bit and 32-bit builds, both Debug and Release configurations) on the Github Actions page, at https://github.com/gnudatalanguage/gdl/actions.

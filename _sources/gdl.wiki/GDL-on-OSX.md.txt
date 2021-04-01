@@ -2,31 +2,43 @@
 ## packages
 
 GDL is available from:
-- Homebrew: https://github.com/brewsci/homebrew-science/blob/master/Formula/gnudatalanguage.rb
-- Macports: https://github.com/macports/macports-ports/tree/master/math/gnudatalanguage
-- Fink: http://finkproject.org/pdb/package.php/gdl
+- [Homebrew](https://brew.sh/): known as gnudatalanguage (brew install gnudatalanguage) : **OBSOLETE Version**
+- [Macports](https://www.macports.org/): known as gnudatalanguage, version 0.9.9 [**2 years OLD!**](https://github.com/gnudatalanguage/gdl/issues/604#issuecomment-803452695)
+- [Fink](http://finkproject.org/pdb/package.php/gdl): known as gdl, version 0.9.9 **2 years OLD!**
 
-## compilation
+THESE VERSIONS ARE WAAAAY OBSOLETE. This warning will disappear when the above distributions will be in sync. 
 
-We have various difficult points when compiling GDL from source : 
- - activating OpenMP. Depending of OSX version, default Clang may or not come with OpenMP. If OpenMP is not around, we need to deactivated it : 
+You should rebuild GDL using fresh libraries from your favorite brew/fink... , the GDL current sources, and cmake.
+Recent changes in GDL have permitted an 'unified' version compilable indifferently under linux, mac OSX and Windows. It uses wxWidgets for
+graphics and widgets, on Mac OSX forget X11, welcome wxmac!
+
+see discussion [#906](https://github.com/gnudatalanguage/gdl/issues/906#issuecomment-810582636) for a recent success. 
+
+## compilation notes
+
+* Depending of OSX version, default Clang may or not come with OpenMP. If OpenMP is not around, we need to deactivated it : 
 ```
 cmake . [others flags] -DOPENMP=OFF
 ```
+but, having OpenMP, Eigen and compiling GDL in Release (-O3) mode are the only way to have a GDL on par with IDL for speed.  
 
- - activating Readline. Editline is not fully compliant with Readline but it wrongly made symbolic links with readline headers files. Very dangerous. You must install a clean Readline lib. around (the one provided by Brew is OK) then cleanly link to it : 
+* Readline. Editline is not fully compliant with Readline but it wrongly made symbolic links with readline headers files. Very dangerous. You must install a clean Readline lib. around (the one provided by Brew is OK) then cleanly link to it : 
 ```
 cmake . [others flags] -DREADLINEDIR=/usr/local/opt/readline/
 ```
-An example working (tested) on OSX 10.11, 10.12 & 10.14 (with Readline provided by Brew, and Cmake >= 3.0) : 
+* An example working (tested) on OSX 10.11, 10.12 & 10.14 (with Readline provided by Brew, and Cmake >= 3.0) : 
 
 ```
 git clone https://github.com/gnudatalanguage/gdl
 cd gdl
 mkdir build
 cd build
-cmake .. -DREADLINEDIR=/usr/local/opt/readline/ -DOPENMP=OFF -DWXWIDGETS=OFF
--DGEOTIFF=OFF  -DHDF=OFF  -DUDUNITS2=OFF -DPSLIB=OFF -DGRIB=off -DGLPK=OFF
+cmake .. -DREADLINEDIR=/usr/local/opt/readline/ -DOPENMP=OFF -DGEOTIFF=OFF -DHDF=OFF  -DUDUNITS2=OFF -DGRIB=OFF -DGLPK=OFF 
 make -j 4
-make check  (few tests will fail)
 ```
+
+But in the above, you can remove `-DGEOTIFF=OFF -DHDF=OFF  -DUDUNITS2=OFF -DGRIB=OFF -DGLPK=OFF ` provided you have installed the corresponding library. Each time you add a library and call cmake to recompile: it is **mandatory** to clean the cache before running again cmake (rm -f CMakeCache.txt)
+
+* App or not App? It is often recommended that a program be put in a app, see [this topic](https://wiki.wxwidgets.org/WxMac-specific_topics#Building_a_MacOSX_application_bundle) . At the moment, GDL does not build as a nice app. Tests show no difference, but have not been very thorough...
+
+* widget menuBar: many GDL widgets will have a menubar. On OSX this is normally the top menu bar, that changes depending on which window has the focus. To get an unified behaviour on all platfroms, GDL widgets keep their menubar atop each widget window, and the mac menu is desperately void. (besides, doing otherwise does not seem to work despite wxWidgets claiming the contrary).
