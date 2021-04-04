@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
 <title>GDL - GNU Data Language</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/colourise.css" type="text/css" />
@@ -47,9 +48,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gdl-on-linux">
+  <section id="gdl-on-linux">
 <h1>GDL on Linux<a class="headerlink" href="#gdl-on-linux" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="packages">
+<section id="packages">
 <h2>packages:<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Fedora: https://src.fedoraproject.org/rpms/gdl actively maintained.</p></li>
@@ -80,8 +81,8 @@
 <p>Better to recompile GDL with all dependencies freshly updated.
 You will <strong>NEED the wxWidgets library and the plplot drivers for wxWidgets</strong>
 Eventually, you could build gdl with the option “-DINTERACTIVE_GRAPHICS=OFF’ to enable compilation without warnings related to the absence of the adequate plplot driver, but GDL may be unable to open a graphic windows. Sometimes, plplot drivers for wxWindows or Xwin (X11) may be in a separate package, say, <code class="docutils literal notranslate"><span class="pre">plplot-driver-wxwidgets</span></code> . We appreciate returns to update this documentation.</p>
-</div>
-<div class="section" id="compilation">
+</section>
+<section id="compilation">
 <h2>compilation:<a class="headerlink" href="#compilation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>GDL is written in such a way you can compile it fully in user space, without being <em>root</em>, as long as all the mandatory packages (-dev/-devel) are around. If some packages are missing or outdated (e.g. Eigen3), yes, you can use a version in your user space, giving the path as a parameter to CMake (e.g. -DEIGEN3DIR=/path/to/local/Eigen3)</p></li>
@@ -103,8 +104,8 @@ Eventually, you could build gdl with the option “-DINTERACTIVE_GRAPHICS=OFF’
 </pre></div>
 </div>
 <p>(on my old laptop with N=4, less than 5 minutes)</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>

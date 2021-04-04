@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
 <title>GDL - GNU Data Language</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/colourise.css" type="text/css" />
@@ -47,9 +48,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gdl-on-osx">
+  <section id="gdl-on-osx">
 <h1>GDL on OSX<a class="headerlink" href="#gdl-on-osx" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="packages">
+<section id="packages">
 <h2>packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
 <p>GDL is available from:</p>
 <ul class="simple">
@@ -62,8 +63,8 @@
 Recent changes in GDL have permitted an ‘unified’ version compilable indifferently under linux, mac OSX and Windows. It uses wxWidgets for
 graphics and widgets, on Mac OSX forget X11, welcome wxmac!</p>
 <p>see discussion <a class="reference external" href="https://github.com/gnudatalanguage/gdl/issues/906#issuecomment-810582636">#906</a> for a recent success.</p>
-</div>
-<div class="section" id="compilation-notes">
+</section>
+<section id="compilation-notes">
 <h2>compilation notes<a class="headerlink" href="#compilation-notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Depending of OSX version, default Clang may or not come with OpenMP. If OpenMP is not around, we need to deactivated it :</p></li>
@@ -94,8 +95,8 @@ graphics and widgets, on Mac OSX forget X11, welcome wxmac!</p>
 <li><p>App or not App? It is often recommended that a program be put in a app, see <a class="reference external" href="https://wiki.wxwidgets.org/WxMac-specific_topics#Building_a_MacOSX_application_bundle">this topic</a> . At the moment, GDL does not build as a nice app. Tests show no difference, but have not been very thorough…</p></li>
 <li><p>widget menuBar: many GDL widgets will have a menubar. On OSX this is normally the top menu bar, that changes depending on which window has the focus. To get an unified behaviour on all platfroms, GDL widgets keep their menubar atop each widget window, and the mac menu is desperately void. (besides, doing otherwise does not seem to work despite wxWidgets claiming the contrary).</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
