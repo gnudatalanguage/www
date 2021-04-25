@@ -2,6 +2,7 @@
 ## packages:
 
 - Fedora: https://src.fedoraproject.org/rpms/gdl actively maintained.
+- Mageia: https://madb.mageia.org/package/show/application/0/arch/x86_64/name/gnudl 1.0rc3 Excellent!
 - Debian: 
   - https://packages.debian.org/sid/gnudatalanguage 0.9.9 too OLD
   - https://packages.debian.org/python3-gdl idem
@@ -13,9 +14,7 @@
 - Arch:
   - https://aur.archlinux.org/packages/gnudatalanguage/ **0.9.5 world record in obsolescence.**
 
-**Beware, these version are mostly too old.**
-
-Better to recompile GDL with all dependencies freshly updated.
+Beware, some above GDL distributions are **way too old**. In this case, it is better to recompile GDL with all dependencies freshly updated.
 You will **NEED the wxWidgets library and the plplot drivers for wxWidgets**
 Eventually, you could build gdl with the option "-DINTERACTIVE_GRAPHICS=OFF' to enable compilation without warnings related to the absence of the adequate plplot driver, but GDL may be unable to open a graphic windows. Sometimes, plplot drivers for wxWindows or Xwin (X11) may be in a separate package, say, `plplot-driver-wxwidgets` . We appreciate returns to update this documentation.
 
