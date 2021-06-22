@@ -1,29 +1,30 @@
 # GDL on Windows
 ## Download Binaries
 
-- Nightly builds (see also `Nightly builds` section below)
-  - https://github.com/gnudatalanguage/gdl/actions (click on a workflow result, then 'ARTIFACTS' section, and download ```GDL``` or ```GDL Installer```)
-
-## Nightly builds
-Builds of GDL from the master branch of GitHub repository are available (both 64-bit and 32-bit builds, both Debug and Release configurations) on the Github Actions page, at https://github.com/gnudatalanguage/gdl/actions.
+- Weekly builds (unstable, released every Wednesday)
+  - https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release
 
 The easiest way to get GDL running is via ```GDL Installer```. It will install GDL on your machine automatically. For 64 bit builds, you can also choose whether to install ```GDL Workbench```, an Eclipse-based IDE for GDL (for more information, visit https://github.com/gnudatalanguage/gdlde).
 
 Currently, there are three different types of builds:
 - mini: only includes mandatory libraries to run GDL.
 - full: includes all optional libraries except MPI.
-- full-msmpi: includes all optional libraries + MPI. This requires Microsoft MPI pre-installed (https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi).
+- full-msmpi: includes all optional libraries + MPI. This requires Microsoft MPI pre-installed (https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi). This version of GDL is slightly slow at startup due to the initialization of MPI.
+
+## Automatic CI builds
+
+In addition to the weekly builds, automatic CI builds of GDL from the master branch of GitHub repository are also available (both 64-bit and 32-bit builds, both Debug and Release configurations) on the Github Actions page, at https://github.com/gnudatalanguage/gdl/actions.
 
 ## Compilation
 
 To compile GDL locally, follow the below steps:
-1. Download and install MSYS2, and run bash.
+1. Download and install [MSYS2](https://www.msys2.org/).  When complete, run "MSYS MinGW 64-bit" from Start menu.
 2. Set environment variables.
 ```shell
 $ export ROOT_DIR=/path/to/store/everything
 $ export Platform=x86_64 # or 'i686' for 32 bit build
 $ export DEPS=full-msmpi # or 'full' or 'mini'
-$ export Configuration=Release # or 'Debug'
+$ export Configuration=Release # or 'Debug'. linking of GDL in 'Debug' is *extremely slow* 
 ```
 2. Install packages to compile GDL.
 ```shell
@@ -36,17 +37,18 @@ $ git clone https://github.com/gnudatalanguage/gdl
 ```
 2. Build GDL:
 ```shell
-$ gdl/.ci/build_gdl_windows.msys prep # download external libararies
-$ gdl/.ci/build_gdl_windows.msys build # build GDL
+$ gdl/.ci/build_gdl.sh prep # download external libararies
+$ gdl/.ci/build_gdl.sh build # build GDL
 $ ls install # compiled results will be here
 ```
 3. (Optional) run tests:
 ```shell
-$ gdl/.ci/build_gdl_windows.msys check
+$ gdl/.ci/build_gdl.sh check
 ```
 4. (Optional) package GDL into zip and NSIS installer:
 ```shell
-$ export GDLDE_VERSION=untagged-6774c6ca2a5e657f4ac6 # replace this with any newer release
-$ gdl/.ci/build_gdl_windows.msys pack
+$ export GDLDE_VERSION=v1.0.0 # replace this with any newer release
+$ gdl/.ci/build_gdl.sh pack
 $ ls package # packages will be here
 ```
+It is recommended to use `gdl/.ci/build_gdl.sh build` (instead of just "make") anytime you download a new version of GDL sources, as the script adds magic of its own.

@@ -2,11 +2,6 @@
 Some details are still not fixed on GDL.
 
 - adding testsuite to the packages
-
-- maintaining up-to-date packaging on OSX.
-
-- packaging on MSwin (how to download it ? how to use it)
-
 - better managing of OpenMP on OSX (trying harder to detect & use it)
 - robust detection of Readline files to avoid mixing with Editline (esp. on OSX)
 

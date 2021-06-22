@@ -6,13 +6,22 @@ GDL is available from:
 - [Macports](https://www.macports.org/): known as gnudatalanguage, version 0.9.9 [**2 years OLD!**](https://github.com/gnudatalanguage/gdl/issues/604#issuecomment-803452695)
 - [Fink](http://finkproject.org/pdb/package.php/gdl): known as gdl, version 0.9.9 **2 years OLD!**
 
-THESE VERSIONS ARE WAAAAY OBSOLETE. This warning will disappear when the above distributions will be in sync. 
+BUT THESE VERSIONS ARE WAAAAY OBSOLETE. This warning will disappear when the above distributions will be in sync. 
 
-You should rebuild GDL using fresh libraries from your favorite brew/fink... , the GDL current sources, and cmake.
-Recent changes in GDL have permitted an 'unified' version compilable indifferently under linux, mac OSX and Windows. It uses wxWidgets for
-graphics and widgets, on Mac OSX forget X11, welcome wxmac!
+At the moment, you can
+- download the unstable weekly build binaries from https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release, also see #957
+- download the gdl code, and run gdl/.ci/build_gdl.sh . `build_gdl.sh prep` will installe the required libraries, `build_gdl.sh build` will build gdl in `build` and install it in `install`. This is the simplest way.
 
-see discussion [#906](https://github.com/gnudatalanguage/gdl/issues/906#issuecomment-810582636) for a recent success. 
+- rebuild GDL using fresh libraries from your favorite brew/fink... , the GDL current sources, and cmake. "Compilation notes" below may help you.
+
+## notes
+
+* App or not App? It is often recommended that a program be put in a app, see [this topic](https://wiki.wxwidgets.org/WxMac-specific_topics#Building_a_MacOSX_application_bundle) . At the moment, GDL does not build as a nice app. Tests show no difference, but have not been very thorough...
+
+* widget menuBar: many GDL widgets will have a menubar. On OSX this is normally the top menu bar, that changes depending on which window has the focus. To get an unified behaviour on all platfroms, GDL widgets keep their menubar atop each widget window, and the mac menu is desperately void. (besides, doing otherwise does not seem to work despite wxWidgets claiming the contrary).
+
+
+ * Recent changes in GDL have permitted an 'unified' version compilable indifferently under linux, mac OSX and Windows. It uses wxWidgets for graphics and widgets, on Mac OSX forget X11, welcome wxmac!
 
 ## compilation notes
 
@@ -39,6 +48,3 @@ make -j 4
 
 But in the above, you can remove `-DGEOTIFF=OFF -DHDF=OFF  -DUDUNITS2=OFF -DGRIB=OFF -DGLPK=OFF ` provided you have installed the corresponding library. Each time you add a library and call cmake to recompile: it is **mandatory** to clean the cache before running again cmake (rm -f CMakeCache.txt)
 
-* App or not App? It is often recommended that a program be put in a app, see [this topic](https://wiki.wxwidgets.org/WxMac-specific_topics#Building_a_MacOSX_application_bundle) . At the moment, GDL does not build as a nice app. Tests show no difference, but have not been very thorough...
-
-* widget menuBar: many GDL widgets will have a menubar. On OSX this is normally the top menu bar, that changes depending on which window has the focus. To get an unified behaviour on all platfroms, GDL widgets keep their menubar atop each widget window, and the mac menu is desperately void. (besides, doing otherwise does not seem to work despite wxWidgets claiming the contrary).
