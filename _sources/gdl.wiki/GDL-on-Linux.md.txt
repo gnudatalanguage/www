@@ -4,21 +4,28 @@
 - Fedora: https://src.fedoraproject.org/rpms/gdl actively maintained.
 - Mageia: https://madb.mageia.org/package/show/application/0/arch/x86_64/name/gnudl 1.0rc3 Excellent!
 - Debian: 
-  - https://packages.debian.org/sid/gnudatalanguage 0.9.9 too OLD
+  - https://packages.debian.org/stable/gnudatalanguage 0.9.9 too OLD
   - https://packages.debian.org/python3-gdl idem
 - Ubuntu:
-  - http://packages.ubuntu.com/gnudatalanguage 0.9.6 TOTALLY OBSOLETE
+  - http://packages.ubuntu.com/gnudatalanguage 0.9.9 too OLD
   - https://packages.ubuntu.com/python3-gdl idem
 - Gentoo:
   - https://packages.gentoo.org/packages/dev-lang/gdl a 1.0.0 is available! Yepee!
 - Arch:
-  - https://aur.archlinux.org/packages/gnudatalanguage/ **0.9.5 world record in obsolescence.**
+  - https://aur.archlinux.org/packages/gnudatalanguage/ 0.9.9 too OLD
 
-Beware, some above GDL distributions are **way too old**. In this case, it is better to recompile GDL with all dependencies freshly updated.
-You will **NEED the wxWidgets library and the plplot drivers for wxWidgets**
-Eventually, you could build gdl with the option "-DINTERACTIVE_GRAPHICS=OFF' to enable compilation without warnings related to the absence of the adequate plplot driver, but GDL may be unable to open a graphic windows. Sometimes, plplot drivers for wxWindows or Xwin (X11) may be in a separate package, say, `plplot-driver-wxwidgets` . We appreciate returns to update this documentation.
+SO THESE VERSIONS ARE (MOSTLY) OBSOLETE. This warning will disappear when the above distributions will be in sync. 
 
-## compilation:
+At the moment, you can
+-  download the unstable weekly build binaries from https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release, also see [#957](https://github.com/gnudatalanguage/gdl/pull/957)
+
+*or*
+
+ -  Download the gdl code, and run gdl/.ci/build_gdl.sh 2 times:
+ - `build_gdl.sh prep` will install the required libraries.
+ - `build_gdl.sh build` will build gdl in `build` and install it in `install`. This is the simplest way.
+
+*or, traditional way*, using CMake etc:
 
 - GDL is written in such a way you can compile it fully in user space, without being _root_, as long as all the mandatory packages (-dev/-devel) are around. If some packages are missing or outdated (e.g. Eigen3), yes, you can use a version in your user space, giving the path as a parameter to CMake (e.g. -DEIGEN3DIR=/path/to/local/Eigen3) 
 
@@ -26,11 +33,11 @@ Eventually, you could build gdl with the option "-DINTERACTIVE_GRAPHICS=OFF' to 
 
 - GDL now requests CMake 3+. On some old systems (Debian 9, U 14.04) you have access to CMake 3+ with package cmake3 or equivalent module (on HPC with module) 
 
-- please note that two scripts, in the directory scripts/ can help you to prepare the future compilation of GDL
-  -- _./aptget4gdl.sh_ will return most of the packages need on Debian and Ubuntu systems. The list is not absolutely realiable (help welcome) because the names of package are changing and may be different on distribution. One classical example is the GSL. Another one is libreadline-gplv2-dev or libreadline-dev : you need only one of the two. Plplot also is 
-  -- _./rpm4gdl.sh_ is the same for RH, CentOS, SciLinux, Fedora like systems.
 
-- When compiling the first time, you may be blocked because one package is missing. After installing it, it is **mandatory** to clean the cache before running again cmake (rm -f CMakeCache.txt)
+- You will **NEED the wxWidgets library and the plplot drivers for wxWidgets**
+Eventually, you could build gdl with the option "-DINTERACTIVE_GRAPHICS=OFF' to enable compilation without warnings related to the absence of the adequate plplot driver, but GDL may be unable to open a graphic windows. Sometimes, plplot drivers for wxWindows or Xwin (X11) may be in a separate package, say, `plplot-driver-wxwidgets` . We appreciate returns to update this documentation.
+
+- When compiling the first time, you may be blocked because one package is missing. After installing it, it is **mandatory** to clean the cache before running again cmake (`rm -f CMakeCache.txt`)
 
 - Compilation. Once all the packages are around, it is quite fast on multicores :)
 
