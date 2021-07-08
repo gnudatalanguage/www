@@ -85,10 +85,12 @@
 </ul>
 <p><em>or</em></p>
 <ul class="simple">
+<li><p>Assuming you already have a c++ compiler and Cmake (version &gt; 3.2)</p></li>
 <li><p>Download the gdl code, and run gdl/.ci/build_gdl.sh 2 times:</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">prep</span></code> will install the required libraries.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">prep</span></code> will install the required libraries. (If you are not <em>sudoer</em> you will get a list of libs. your admin. will installed for you.)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">build</span></code> will build gdl in <code class="docutils literal notranslate"><span class="pre">build</span></code> and install it in <code class="docutils literal notranslate"><span class="pre">install</span></code>. This is the simplest way.</p></li>
 </ul>
+<p>This efficient and simple way was successfully tested on : Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS; Debian 9, 10, Sid; Fedora 28</p>
 <p><em>or, traditional way</em>, using CMake etc:</p>
 <ul class="simple">
 <li><p>GDL is written in such a way you can compile it fully in user space, without being <em>root</em>, as long as all the mandatory packages (-dev/-devel) are around. If some packages are missing or outdated (e.g. Eigen3), yes, you can use a version in your user space, giving the path as a parameter to CMake (e.g. -DEIGEN3DIR=/path/to/local/Eigen3)</p></li>
