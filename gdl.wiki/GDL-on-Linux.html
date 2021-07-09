@@ -85,7 +85,7 @@
 </ul>
 <p><em>or</em></p>
 <ul class="simple">
-<li><p>Assuming you already have a c++ compiler and Cmake (version &gt; 3.2)</p></li>
+<li><p>Assuming you already have a <a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/C----Compilers">c++ compiler</a> , Cmake (version &gt; 3.2), curl or wget, git</p></li>
 <li><p>Download the gdl code, and run gdl/.ci/build_gdl.sh 2 times:</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">prep</span></code> will install the required libraries. (If you are not <em>sudoer</em> you will get a list of libs. your admin. will installed for you.)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">build</span></code> will build gdl in <code class="docutils literal notranslate"><span class="pre">build</span></code> and install it in <code class="docutils literal notranslate"><span class="pre">install</span></code>. This is the simplest way.</p></li>
@@ -99,7 +99,7 @@
 <li><p>You will <strong>NEED the wxWidgets library and the plplot drivers for wxWidgets</strong>
 Eventually, you could build gdl with the option “-DINTERACTIVE_GRAPHICS=OFF’ to enable compilation without warnings related to the absence of the adequate plplot driver, but GDL may be unable to open a graphic windows. Sometimes, plplot drivers for wxWindows or Xwin (X11) may be in a separate package, say, <code class="docutils literal notranslate"><span class="pre">plplot-driver-wxwidgets</span></code> . We appreciate returns to update this documentation.</p></li>
 <li><p>When compiling the first time, you may be blocked because one package is missing. After installing it, it is <strong>mandatory</strong> to clean the cache before running again cmake (<code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-f</span> <span class="pre">CMakeCache.txt</span></code>)</p></li>
-<li><p>Compilation. Once all the packages are around, it is quite fast on multicores :)</p></li>
+<li><p>Compilation. Once all the packages are around, it is quite fast on multi-cores :)</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gnudatalanguage</span><span class="o">/</span><span class="n">gdl</span>
 <span class="n">cd</span> <span class="n">gdl</span>
@@ -107,7 +107,7 @@ Eventually, you could build gdl with the option “-DINTERACTIVE_GRAPHICS=OFF’
 <span class="n">cd</span> <span class="n">build</span>
 <span class="n">cmake</span> <span class="o">..</span>
 <span class="n">make</span> <span class="o">-</span><span class="n">j</span> <span class="n">N</span>  <span class="p">(</span><span class="n">N</span> <span class="n">depending</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">cores</span> <span class="n">you</span> <span class="n">have</span><span class="p">)</span>
-<span class="n">make</span> <span class="n">check</span>
+<span class="n">make</span> <span class="n">test</span>
 </pre></div>
 </div>
 <p>(on my old laptop with N=4, less than 5 minutes)</p>

@@ -21,7 +21,7 @@ At the moment, you can
 
 *or*
 
- -  Assuming you already have a c++ compiler and Cmake (version > 3.2)
+ -  Assuming you already have a [c++ compiler](https://github.com/gnudatalanguage/gdl/wiki/C----Compilers) , Cmake (version > 3.2), curl or wget, git
  -  Download the gdl code, and run gdl/.ci/build_gdl.sh 2 times:
  - `build_gdl.sh prep` will install the required libraries. (If you are not _sudoer_ you will get a list of libs. your admin. will installed for you.)
  - `build_gdl.sh build` will build gdl in `build` and install it in `install`. This is the simplest way.
@@ -42,7 +42,7 @@ Eventually, you could build gdl with the option "-DINTERACTIVE_GRAPHICS=OFF' to 
 
 - When compiling the first time, you may be blocked because one package is missing. After installing it, it is **mandatory** to clean the cache before running again cmake (`rm -f CMakeCache.txt`)
 
-- Compilation. Once all the packages are around, it is quite fast on multicores :)
+- Compilation. Once all the packages are around, it is quite fast on multi-cores :)
 
 ```
 git clone https://github.com/gnudatalanguage/gdl
@@ -51,7 +51,7 @@ mkdir build
 cd build
 cmake ..
 make -j N  (N depending the number of cores you have)
-make check
+make test
 ```
 (on my old laptop with N=4, less than 5 minutes)
 
