@@ -1,6 +1,8 @@
 # GDL on OSX
 ## packages
 
+`Way 0`
+
 GDL is available from:
 - [Homebrew](https://brew.sh/): known as gnudatalanguage (brew install gnudatalanguage) : **OBSOLETE Version**
 - [Macports](https://www.macports.org/): known as gnudatalanguage, version 1.0.0-rc3 thanks @tenomoto 
@@ -11,7 +13,7 @@ SO THESE VERSIONS ARE MOSTLY OBSOLETE. This warning will disappear when the abov
 At the moment, you can
 -  download the unstable weekly build binaries from https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release, also see [#957](https://github.com/gnudatalanguage/gdl/pull/957)
 
-*or*
+*or* `Way 1`
 
 1. [install Homebrew using the one-liner command](https://docs.brew.sh/Installation) 
 1. Using Brew, install the required libraries (cmake, g++ ...). 
@@ -19,7 +21,9 @@ At the moment, you can
  - `build_gdl.sh prep` will install the required libraries.
  - `build_gdl.sh build` will build gdl in `build` and install it in `install`. This is the simplest way.
 
-*or*
+This is very frequently tested on OSX 10.14.6 and 11.3
+
+*or* `Way 2`
 
 - rebuild GDL using fresh libraries from your favorite brew/fink... , the GDL current sources, and cmake. "Compilation notes" below may help you.
 
