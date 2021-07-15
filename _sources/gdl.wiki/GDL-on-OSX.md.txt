@@ -21,7 +21,7 @@ At the moment, you can
  - `build_gdl.sh prep` will install the required libraries.
  - `build_gdl.sh build` will build gdl in `build` and install it in `install`. This is the simplest way.
 
-This is very frequently tested on OSX 10.14.6 and 11.3
+This script is very frequently tested on OSX 10.14.6 and 11.3. Brew may have side effects (updates are frequent and quite long, may have conflict if machine with multi-users, projects asking for login/pass). Usually just reading the messages, using 'brew doctor', passing when login/pass should be enough.
 
 *or* `Way 2`
 
