@@ -15,6 +15,7 @@ At the moment, you can
 
 *or* `Way 1`
 
+0. de-activate any conda (miniconda, anaconda) related env.
 1. [install Homebrew using the one-liner command](https://docs.brew.sh/Installation) 
 1. Using Brew, install the required libraries (cmake, g++ ...). 
 1. Download the gdl code, and run gdl/.ci/build_gdl.sh 2 times:
@@ -22,6 +23,16 @@ At the moment, you can
  - `build_gdl.sh build` will build gdl in `build` and install it in `install`. This is the simplest way.
 
 This script is very frequently tested on OSX 10.14.6 and 11.3. Brew may have side effects (updates are frequent and quite long, may have conflict if machine with multi-users, projects asking for login/pass). Usually just reading the messages, using 'brew doctor', passing when login/pass should be enough.
+
+A summary working on up-to-date 10.14.6 & 11.3, assuming : Xcode up-to-date, you are sudo for Brew : 
+```
+brew install git
+brew install cmake
+git clone https://github.com/gnudatalanguage/gdl
+cd gdl
+bash .ci/build_gdl.sh prep
+bash .ci/build_gdl.sh build
+```
 
 *or* `Way 2`
 
