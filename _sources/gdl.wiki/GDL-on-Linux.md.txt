@@ -1,5 +1,14 @@
 # GDL on Linux
+
+[Packages](https://github.com/gnudatalanguage/gdl/wiki/GDL-on-Linux/##packages)
+[Compilation](https://github.com/gnudatalanguage/gdl/wiki/GDL-on-Linux/##Compilation)
+[script build_gdl.sh](https://github.com/gnudatalanguage/gdl/wiki/GDL-on-Linux/#script)
+[cmake](https://github.com/gnudatalanguage/gdl/wiki/GDL-on-Linux/#cmake)
+
 ## packages:
+
+Warning : we try hard to deliver a 1.0.0 version, the code is actively changed, a lot of small or important bugs have been corrected in rc1, rc2, rc3 and in the current Git version ... As long as a 1.0.0 version is not delivered, please consider that most packages
+don't really reflect the current status of the code. It would be better to use the weekly unstable releases !
 
 - Fedora: https://src.fedoraproject.org/rpms/gdl actively maintained.
 - Mageia: https://madb.mageia.org/package/show/application/0/arch/x86_64/name/gnudl 1.0rc3 Excellent!
@@ -19,16 +28,37 @@ SO THESE VERSIONS ARE (MOSTLY) OBSOLETE. This warning will disappear when the ab
 At the moment, you can
 -  download the unstable weekly build binaries from https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release, also see [#957](https://github.com/gnudatalanguage/gdl/pull/957)
 
-*or*
+## Compilation:
+*or* you can compile the code
+
+Two mains paths : 
+
+### script:
+`Way 1` using the script `.ci/build_gdl.sh` (assuming you can be _sudo_)
 
  -  Assuming you already have a [c++ compiler](https://github.com/gnudatalanguage/gdl/wiki/C----Compilers) , Cmake (version > 3.2), curl or wget, git
  -  Download the gdl code, and run gdl/.ci/build_gdl.sh 2 times:
  - `build_gdl.sh prep` will install the required libraries. (If you are not _sudoer_ you will get a list of libs. your admin. will installed for you.)
  - `build_gdl.sh build` will build gdl in `build` and install it in `install`. This is the simplest way.
 
+A summary for Ubuntu/Debian (for RH/Fedora, just change apt-get by rpm ...): 
+```
+apt-get install git
+apt-get install cmake
+apt-get install g++
+mkdir GDL
+cd GDL
+git clone https://github.com/gnudatalanguage/gdl
+cd gdl
+bash .ci/build_gdl.sh prep   <<-- need to be sudo to add set of official packages
+bash .ci/build_gdl.sh build
+```
+
 This efficient and simple way was successfully tested on : Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS; Debian 9, 10, Sid; Fedora 28
 
-*or, traditional way*, using CMake etc:
+### cmake:
+
+*or, traditional way*,`Way 2` using CMake :
 
 - GDL is written in such a way you can compile it fully in user space, without being _root_, as long as all the mandatory packages (-dev/-devel) are around. If some packages are missing or outdated (e.g. Eigen3), yes, you can use a version in your user space, giving the path as a parameter to CMake (e.g. -DEIGEN3DIR=/path/to/local/Eigen3) 
 
@@ -54,4 +84,3 @@ make -j N  (N depending the number of cores you have)
 make test
 ```
 (on my old laptop with N=4, less than 5 minutes)
-

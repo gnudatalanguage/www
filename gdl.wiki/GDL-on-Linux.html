@@ -50,8 +50,14 @@
             
   <section id="gdl-on-linux">
 <h1>GDL on Linux<a class="headerlink" href="#gdl-on-linux" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/GDL-on-Linux/##packages">Packages</a>
+<a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/GDL-on-Linux/##Compilation">Compilation</a>
+<a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/GDL-on-Linux/#script">script build_gdl.sh</a>
+<a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/GDL-on-Linux/#cmake">cmake</a></p>
 <section id="packages">
 <h2>packages:<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
+<p>Warning : we try hard to deliver a 1.0.0 version, the code is actively changed, a lot of small or important bugs have been corrected in rc1, rc2, rc3 and in the current Git version … As long as a 1.0.0 version is not delivered, please consider that most packages
+don’t really reflect the current status of the code. It would be better to use the weekly unstable releases !</p>
 <ul class="simple">
 <li><p>Fedora: https://src.fedoraproject.org/rpms/gdl actively maintained.</p></li>
 <li><p>Mageia: https://madb.mageia.org/package/show/application/0/arch/x86_64/name/gnudl 1.0rc3 Excellent!</p></li>
@@ -83,15 +89,35 @@
 <ul class="simple">
 <li><p>download the unstable weekly build binaries from https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release, also see <a class="reference external" href="https://github.com/gnudatalanguage/gdl/pull/957">#957</a></p></li>
 </ul>
-<p><em>or</em></p>
+</section>
+<section id="compilation">
+<h2>Compilation:<a class="headerlink" href="#compilation" title="Permalink to this headline">¶</a></h2>
+<p><em>or</em> you can compile the code</p>
+<p>Two mains paths :</p>
+<section id="script">
+<h3>script:<a class="headerlink" href="#script" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">1</span></code> using the script <code class="docutils literal notranslate"><span class="pre">.ci/build_gdl.sh</span></code> (assuming you can be <em>sudo</em>)</p>
 <ul class="simple">
 <li><p>Assuming you already have a <a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/C----Compilers">c++ compiler</a> , Cmake (version &gt; 3.2), curl or wget, git</p></li>
 <li><p>Download the gdl code, and run gdl/.ci/build_gdl.sh 2 times:</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">prep</span></code> will install the required libraries. (If you are not <em>sudoer</em> you will get a list of libs. your admin. will installed for you.)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">build</span></code> will build gdl in <code class="docutils literal notranslate"><span class="pre">build</span></code> and install it in <code class="docutils literal notranslate"><span class="pre">install</span></code>. This is the simplest way.</p></li>
 </ul>
+<p>A summary for Ubuntu/Debian (for RH/Fedora, just change apt-get by rpm …):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">git</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">cmake</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">g</span><span class="o">++</span>
+<span class="n">mkdir</span> <span class="n">GDL</span>
+<span class="n">cd</span> <span class="n">GDL</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gnudatalanguage</span><span class="o">/</span><span class="n">gdl</span>
+<span class="n">cd</span> <span class="n">gdl</span>
+<span class="n">bash</span> <span class="o">.</span><span class="n">ci</span><span class="o">/</span><span class="n">build_gdl</span><span class="o">.</span><span class="n">sh</span> <span class="n">prep</span>   <span class="o">&lt;&lt;--</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">sudo</span> <span class="n">to</span> <span class="n">add</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">official</span> <span class="n">packages</span>
+<span class="n">bash</span> <span class="o">.</span><span class="n">ci</span><span class="o">/</span><span class="n">build_gdl</span><span class="o">.</span><span class="n">sh</span> <span class="n">build</span>
+</pre></div>
+</div>
 <p>This efficient and simple way was successfully tested on : Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS; Debian 9, 10, Sid; Fedora 28</p>
-<p><em>or, traditional way</em>, using CMake etc:</p>
+<p>### cmake:</p>
+<p><em>or, traditional way</em>,<code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">2</span></code> using CMake :</p>
 <ul class="simple">
 <li><p>GDL is written in such a way you can compile it fully in user space, without being <em>root</em>, as long as all the mandatory packages (-dev/-devel) are around. If some packages are missing or outdated (e.g. Eigen3), yes, you can use a version in your user space, giving the path as a parameter to CMake (e.g. -DEIGEN3DIR=/path/to/local/Eigen3)</p></li>
 <li><p>GDL can be compiled with : GCC (GNU C Compiler), Clang (LLVM), icc (Intel C compiler)</p></li>
@@ -111,6 +137,7 @@ Eventually, you could build gdl with the option “-DINTERACTIVE_GRAPHICS=OFF’
 </pre></div>
 </div>
 <p>(on my old laptop with N=4, less than 5 minutes)</p>
+</section>
 </section>
 </section>
 
