@@ -38,6 +38,7 @@ $ git clone https://github.com/gnudatalanguage/gdl
 2. Build GDL:
 ```shell
 $ gdl/.ci/build_gdl.sh prep # download external libararies
+$ gdl/.ci/build_gdl.sh configure # run CMake to prepare the make file
 $ gdl/.ci/build_gdl.sh build # build GDL
 $ ls install # compiled results will be here
 ```

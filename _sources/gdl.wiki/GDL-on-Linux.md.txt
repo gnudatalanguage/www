@@ -39,6 +39,7 @@ Two mains paths :
  -  Assuming you already have a [c++ compiler](https://github.com/gnudatalanguage/gdl/wiki/C----Compilers) , Cmake (version > 3.2), curl or wget, git
  -  Download the gdl code, and run gdl/.ci/build_gdl.sh 2 times:
  - `build_gdl.sh prep` will install the required libraries. (If you are not _sudoer_ you will get a list of libs. your admin. will installed for you.)
+ - `build_gdl.sh configure` will run Cmake to prepare the Make file
  - `build_gdl.sh build` will build gdl in `build` and install it in `install`. This is the simplest way.
 
 A summary for Ubuntu/Debian (for RH/Fedora, just change apt-get by rpm ...): 
@@ -51,6 +52,7 @@ cd GDL
 git clone https://github.com/gnudatalanguage/gdl
 cd gdl
 bash .ci/build_gdl.sh prep   <<-- need to be sudo to add set of official packages
+bash .ci/build_gdl.sh configure
 bash .ci/build_gdl.sh build
 ```
 
