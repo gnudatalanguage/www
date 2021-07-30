@@ -23,7 +23,7 @@ To compile GDL locally, follow the below steps:
 ```shell
 $ export ROOT_DIR=/path/to/store/everything
 $ export Platform=x86_64 # or 'i686' for 32 bit build
-$ export DEPS=full-msmpi # or 'full' or 'mini'
+$ export DEPS=standard # or 'debug' or 'headless'
 $ export Configuration=Release # or 'Debug'. linking of GDL in 'Debug' is *extremely slow* 
 ```
 2. Install packages to compile GDL.
