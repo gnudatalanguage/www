@@ -18,7 +18,7 @@ At the moment, you can
 0. de-activate any conda (miniconda, anaconda) related env.
 1. [install Homebrew using the one-liner command](https://docs.brew.sh/Installation) 
 1. Using Brew, install the required libraries (cmake, g++ ...). 
-1. Download the gdl code, and run gdl/.ci/build_gdl.sh 2 times:
+1. Download the gdl code, and run gdl/scripts/build_gdl.sh 3 times:
  - `build_gdl.sh prep` will install the required libraries.
  - `build_gdl.sh configure` will preparer the make file for compilation in next step.
  - `build_gdl.sh build` will build gdl in `build` and install it in `install`. This is the simplest way.
@@ -31,9 +31,9 @@ brew install git
 brew install cmake
 git clone https://github.com/gnudatalanguage/gdl
 cd gdl
-bash .ci/build_gdl.sh prep
-bash .ci/build_gdl.sh configure
-bash .ci/build_gdl.sh build
+bash scripts/build_gdl.sh prep
+bash scripts/build_gdl.sh configure
+bash scripts/build_gdl.sh build
 ```
 
 FYI, the current version version of CLang (the C/C++ compiler used in the script by default) is now broken in up-to-date OSX 10.14.6

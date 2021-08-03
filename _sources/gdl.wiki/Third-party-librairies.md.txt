@@ -1,0 +1,21 @@
+# Third party librairies
+Three general purpose and useful libraries are already packaged in Debian via the [Debian Astro Project](https://salsa.debian.org/debian-astro-team) : 
+
+- AstroLib, maintained by Wayne Landsman ([idlastro official page at NASA](https://idlastro.gsfc.nasa.gov/)). This library provides notably primitives to read and write FITS files.
+- Coyote by David W. Fanning ([Coyote official page](http://www.idlcoyote.com/documents/programs.php)). High quality graphicals outputs and more.
+- MPfit by Craig Markwart ([MPfit official page](https://pages.physics.wisc.edu/~craigm/idl/cmpfit.html)) The famous and convenient fitting procedure ...
+
+```
+git clone https://salsa.debian.org/debian-astro-team/idlastro
+git clone https://salsa.debian.org/debian-astro-team/coyote
+git clone https://salsa.debian.org/debian-astro-team/mpfit
+```
+
+Many other libraries have been extensively tested and worked well with GDL 1.0.0+, including : 
+- Ulyss by Ph. Prugniel & al ([Ulyss official page](http://ulyss.univ-lyon1.fr/))
+- ATV by Aaron Barth ([ATV official page](https://www.physics.uci.edu/~barth/atv/))
+(`wget https://www.physics.uci.edu/~barth/atv/atv.pro`) 
+
+...
+
+You can contact us to be in the list

@@ -15,7 +15,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Third party librairies" href="Third-party-librairies.html" /> 
+    <link rel="next" title="ToDo list" href="ToDo-list.html" />
+    <link rel="prev" title="Known issues" href="Known-issues.html" /> 
   </head><body>
   <div id="wrap">
     <div id="header">
@@ -47,15 +48,27 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="todo-list">
-<h1>ToDo list<a class="headerlink" href="#todo-list" title="Permalink to this headline">¶</a></h1>
-<p>Some details are still not fixed on GDL.</p>
+  <section id="third-party-librairies">
+<h1>Third party librairies<a class="headerlink" href="#third-party-librairies" title="Permalink to this headline">¶</a></h1>
+<p>Three general purpose and useful libraries are already packaged in Debian via the <a class="reference external" href="https://salsa.debian.org/debian-astro-team">Debian Astro Project</a> :</p>
 <ul class="simple">
-<li><p>adding testsuite to the packages</p></li>
-<li><p>better managing of OpenMP on OSX (trying harder to detect &amp; use it)</p></li>
-<li><p>robust detection of Readline files to avoid mixing with Editline (esp. on OSX)</p></li>
-<li><p>page by page HELP (as it is now available for HELP, /recall_com)</p></li>
+<li><p>AstroLib, maintained by Wayne Landsman (<a class="reference external" href="https://idlastro.gsfc.nasa.gov/">idlastro official page at NASA</a>). This library provides notably primitives to read and write FITS files.</p></li>
+<li><p>Coyote by David W. Fanning (<a class="reference external" href="http://www.idlcoyote.com/documents/programs.php">Coyote official page</a>). High quality graphicals outputs and more.</p></li>
+<li><p>MPfit by Craig Markwart (<a class="reference external" href="https://pages.physics.wisc.edu/~craigm/idl/cmpfit.html">MPfit official page</a>) The famous and convenient fitting procedure …</p></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">salsa</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">debian</span><span class="o">-</span><span class="n">astro</span><span class="o">-</span><span class="n">team</span><span class="o">/</span><span class="n">idlastro</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">salsa</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">debian</span><span class="o">-</span><span class="n">astro</span><span class="o">-</span><span class="n">team</span><span class="o">/</span><span class="n">coyote</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">salsa</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">debian</span><span class="o">-</span><span class="n">astro</span><span class="o">-</span><span class="n">team</span><span class="o">/</span><span class="n">mpfit</span>
+</pre></div>
+</div>
+<p>Many other libraries have been extensively tested and worked well with GDL 1.0.0+, including :</p>
+<ul class="simple">
+<li><p>Ulyss by Ph. Prugniel &amp; al (<a class="reference external" href="http://ulyss.univ-lyon1.fr/">Ulyss official page</a>)</p></li>
+<li><p>ATV by Aaron Barth (<a class="reference external" href="https://www.physics.uci.edu/~barth/atv/">ATV official page</a>)
+(<code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">https://www.physics.uci.edu/~barth/atv/atv.pro</span></code>)</p></li>
+</ul>
+<p>…</p>
+<p>You can contact us to be in the list</p>
 </section>
 
 
@@ -78,8 +91,8 @@
 <li class="toctree-l2"><a class="reference internal" href="GDL-on-OSX.html">GDL on OSX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GDL-on-Windows.html">GDL on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Known-issues.html">Known issues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Third-party-librairies.html">Third party librairies</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ToDo list</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Third party librairies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToDo-list.html">ToDo list</a></li>
 </ul>
 </li>
 </ul>

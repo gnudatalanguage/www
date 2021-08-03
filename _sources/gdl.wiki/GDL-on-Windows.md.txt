@@ -28,7 +28,7 @@ $ export Configuration=Release # or 'Debug'. linking of GDL in 'Debug' is *extre
 ```
 2. Install packages to compile GDL.
 ```shell
-$ pacman -S mingw-w64-${Platform}-toolchain mingw-w64-${Platform}-cmake mingw-w64-${Platform}-nsis zip unzip tar zstd make git
+$ pacman -S mingw-w64-${Platform}-toolchain mingw-w64-${Platform}-cmake mingw-w64-${Platform}-nsis zip unzip tar zstd git base-devel
 ```
 3. cd to `ROOT_DIR` and clone GDL.
 ```shell
@@ -37,19 +37,20 @@ $ git clone https://github.com/gnudatalanguage/gdl
 ```
 2. Build GDL:
 ```shell
-$ gdl/.ci/build_gdl.sh prep # download external libararies
-$ gdl/.ci/build_gdl.sh configure # run CMake to prepare the make file
-$ gdl/.ci/build_gdl.sh build # build GDL
+$ gdl/scripts/build_gdl.sh prep # download external libararies
+$ gdl/scripts/build_gdl.sh configure # run CMake to prepare the make file
+$ gdl/scripts/build_gdl.sh build # build GDL
+$ gdl/scripts/build_gdl.sh install # install GDL
 $ ls install # compiled results will be here
 ```
 3. (Optional) run tests:
 ```shell
-$ gdl/.ci/build_gdl.sh check
+$ gdl/scripts/build_gdl.sh check
 ```
 4. (Optional) package GDL into zip and NSIS installer:
 ```shell
 $ export GDLDE_VERSION=v1.0.0 # replace this with any newer release
-$ gdl/.ci/build_gdl.sh pack
+$ gdl/scripts/build_gdl.sh pack
 $ ls package # packages will be here
 ```
-It is recommended to use `gdl/.ci/build_gdl.sh build` (instead of just "make") anytime you download a new version of GDL sources, as the script adds magic of its own.
+It is recommended to use `gdl/scripts/build_gdl.sh build` (instead of just "make") anytime you download a new version of GDL sources, as the script adds magic of its own.
