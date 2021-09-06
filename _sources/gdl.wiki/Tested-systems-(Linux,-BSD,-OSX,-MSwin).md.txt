@@ -1,0 +1,18 @@
+# Tested systems (Linux, BSD, OSX, MSwin)
+This page lists whether we succeed to compile GDL 1.0.0 using the script `build_gdl.sh` or using usual `cmake` invocation (this invocation allows to use more options and de-activate missing options). Please note `build_gdl.sh prep` can be used to prepare a faster configuration then compilation after ...
+
+|OS|script|hand|comments|
+|----|----|------|--------------------|
+|u1404|no|yes|
+|u1604|no|yes|
+|u1804|yes||
+|u2004|yes||
+|u2104|yes||
+|debian 9 64b|yes||
+|debian 10 64b|yes||
+|debian 11 32b|yes||
+|Fedora 28|yes||
+|opensuse Leap 15.3|no|yes| missing eccodes|
+|MSwin 10|yes|| very long process|
+|OSX 11 (Big Sur)|yes|| long preparation due to Brewe|
+|OSX 10.4.6 |(yes)|yes| if and only if Xcode is updated ... |

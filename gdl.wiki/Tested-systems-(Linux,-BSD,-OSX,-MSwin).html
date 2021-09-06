@@ -15,7 +15,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Third party librairies" href="Third-party-librairies.html" /> 
+    <link rel="next" title="Third party librairies" href="Third-party-librairies.html" />
+    <link rel="prev" title="Known issues" href="Known-issues.html" /> 
   </head><body>
   <div id="wrap">
     <div id="header">
@@ -47,15 +48,24 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="todo-list">
-<h1>ToDo list<a class="headerlink" href="#todo-list" title="Permalink to this headline">¶</a></h1>
-<p>Some details are still not fixed on GDL.</p>
-<ul class="simple">
-<li><p>adding testsuite to the packages</p></li>
-<li><p>better managing of OpenMP on OSX (trying harder to detect &amp; use it)</p></li>
-<li><p>robust detection of Readline files to avoid mixing with Editline (esp. on OSX)</p></li>
-<li><p>page by page HELP (as it is now available for HELP, /recall_com)</p></li>
-</ul>
+  <section id="tested-systems-linux-bsd-osx-mswin">
+<h1>Tested systems (Linux, BSD, OSX, MSwin)<a class="headerlink" href="#tested-systems-linux-bsd-osx-mswin" title="Permalink to this headline">¶</a></h1>
+<p>This page lists whether we succeed to compile GDL 1.0.0 using the script <code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span></code> or using usual <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation (this invocation allows to use more options and de-activate missing options). Please note <code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">prep</span></code> can be used to prepare a faster configuration then compilation after …</p>
+<p>|OS|script|hand|comments|
+|—-|—-|——|——————–|
+|u1404|no|yes|
+|u1604|no|yes|
+|u1804|yes||
+|u2004|yes||
+|u2104|yes||
+|debian 9 64b|yes||
+|debian 10 64b|yes||
+|debian 11 32b|yes||
+|Fedora 28|yes||
+|opensuse Leap 15.3|no|yes| missing eccodes|
+|MSwin 10|yes|| very long process|
+|OSX 11 (Big Sur)|yes|| long preparation due to Brewe|
+|OSX 10.4.6 |(yes)|yes| if and only if Xcode is updated … |</p>
 </section>
 
 
@@ -79,9 +89,9 @@
 <li class="toctree-l2"><a class="reference internal" href="GDL-on-Windows.html">GDL on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Home.html">Home</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Known-issues.html">Known issues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tested-systems-%28Linux%2C-BSD%2C-OSX%2C-MSwin%29.html">Tested systems (Linux, BSD, OSX, MSwin)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tested systems (Linux, BSD, OSX, MSwin)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Third-party-librairies.html">Third party librairies</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ToDo list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToDo-list.html">ToDo list</a></li>
 </ul>
 </li>
 </ul>

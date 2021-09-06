@@ -15,6 +15,7 @@ Many other libraries have been extensively tested and worked well with GDL 1.0.0
 - Ulyss by Ph. Prugniel & al ([Ulyss official page](http://ulyss.univ-lyon1.fr/))
 - ATV by Aaron Barth ([ATV official page](https://www.physics.uci.edu/~barth/atv/))
 (`wget https://www.physics.uci.edu/~barth/atv/atv.pro`) 
+- GRAFFER by James Tappin ([GRAFFER official page](https://github.com/jtappin/graffer-gdl))
 
 ...
 

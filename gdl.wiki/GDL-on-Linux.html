@@ -59,32 +59,32 @@
 <p>Warning : we try hard to deliver a 1.0.0 version, the code is actively changed, a lot of small or important bugs have been corrected in rc1, rc2, rc3 and in the current Git version … As long as a 1.0.0 version is not delivered, please consider that most packages
 don’t really reflect the current status of the code. It would be better to use the weekly unstable releases !</p>
 <ul class="simple">
-<li><p>Fedora: https://src.fedoraproject.org/rpms/gdl actively maintained.</p></li>
-<li><p>Mageia: https://madb.mageia.org/package/show/application/0/arch/x86_64/name/gnudl 1.0rc3 Excellent!</p></li>
+<li><p>Fedora: https://src.fedoraproject.org/rpms/gdl <strong>actively maintained.</strong></p></li>
+<li><p>Mageia: https://madb.mageia.org/package/show/application/0/arch/x86_64/name/gnudl <strong>1.0.0</strong></p></li>
 <li><p>Debian:</p>
 <ul>
-<li><p>https://packages.debian.org/stable/gnudatalanguage 0.9.9 too OLD</p></li>
-<li><p>https://packages.debian.org/python3-gdl idem</p></li>
+<li><p>https://packages.debian.org/stable/gnudatalanguage 0.9.9 (too OLD)</p></li>
+<li><p>https://packages.debian.org/unstable/gnudatalanguage <strong>1.0.0</strong></p></li>
+<li><p>https://packages.debian.org/python3-gdl <strong>1.0.0</strong> in ‘unstable’</p></li>
 </ul>
 </li>
 <li><p>Ubuntu:</p>
 <ul>
-<li><p>http://packages.ubuntu.com/gnudatalanguage 0.9.9 too OLD</p></li>
-<li><p>https://packages.ubuntu.com/python3-gdl idem</p></li>
+<li><p>http://packages.ubuntu.com/gnudatalanguage 0.9.9 (too OLD)</p></li>
+<li><p>https://packages.ubuntu.com/python3-gdl 0.9.9 (too OLD)</p></li>
 </ul>
 </li>
 <li><p>Gentoo:</p>
 <ul>
-<li><p>https://packages.gentoo.org/packages/dev-lang/gdl a 1.0.0 is available! Yepee!</p></li>
+<li><p>https://packages.gentoo.org/packages/dev-lang/gdl <strong>1.0.0</strong></p></li>
 </ul>
 </li>
 <li><p>Arch:</p>
 <ul>
-<li><p>https://aur.archlinux.org/packages/gnudatalanguage/ 0.9.9 too OLD</p></li>
+<li><p>https://aur.archlinux.org/packages/gnudatalanguage/ <strong>1.0.0</strong></p></li>
 </ul>
 </li>
 </ul>
-<p>SO THESE VERSIONS ARE (MOSTLY) OBSOLETE. This warning will disappear when the above distributions will be in sync.</p>
 <p>At the moment, you can</p>
 <ul class="simple">
 <li><p>download the unstable weekly build binaries from https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release, also see <a class="reference external" href="https://github.com/gnudatalanguage/gdl/pull/957">#957</a></p></li>
@@ -96,10 +96,10 @@ don’t really reflect the current status of the code. It would be better to use
 <p>Two mains paths :</p>
 <section id="script">
 <h3>script:<a class="headerlink" href="#script" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">1</span></code> using the script <code class="docutils literal notranslate"><span class="pre">.ci/build_gdl.sh</span></code> (assuming you can be <em>sudo</em>)</p>
+<p><code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">1</span></code> using the script <code class="docutils literal notranslate"><span class="pre">scripts/build_gdl.sh</span></code> (assuming you can be <em>sudo</em>)</p>
 <ul class="simple">
 <li><p>Assuming you already have a <a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/C----Compilers">c++ compiler</a> , Cmake (version &gt; 3.2), curl or wget, git</p></li>
-<li><p>Download the gdl code, and run gdl/.ci/build_gdl.sh 2 times:</p></li>
+<li><p>Download the gdl code, and run gdl/scripts/build_gdl.sh 2 times:</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">prep</span></code> will install the required libraries. (If you are not <em>sudoer</em> you will get a list of libs. your admin. will installed for you.)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">configure</span></code> will run Cmake to prepare the Make file</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">build</span></code> will build gdl in <code class="docutils literal notranslate"><span class="pre">build</span></code> and install it in <code class="docutils literal notranslate"><span class="pre">install</span></code>. This is the simplest way.</p></li>
@@ -112,9 +112,10 @@ don’t really reflect the current status of the code. It would be better to use
 <span class="n">cd</span> <span class="n">GDL</span>
 <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gnudatalanguage</span><span class="o">/</span><span class="n">gdl</span>
 <span class="n">cd</span> <span class="n">gdl</span>
-<span class="n">bash</span> <span class="o">.</span><span class="n">ci</span><span class="o">/</span><span class="n">build_gdl</span><span class="o">.</span><span class="n">sh</span> <span class="n">prep</span>   <span class="o">&lt;&lt;--</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">sudo</span> <span class="n">to</span> <span class="n">add</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">official</span> <span class="n">packages</span>
-<span class="n">bash</span> <span class="o">.</span><span class="n">ci</span><span class="o">/</span><span class="n">build_gdl</span><span class="o">.</span><span class="n">sh</span> <span class="n">configure</span>
-<span class="n">bash</span> <span class="o">.</span><span class="n">ci</span><span class="o">/</span><span class="n">build_gdl</span><span class="o">.</span><span class="n">sh</span> <span class="n">build</span>
+<span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build_gdl</span><span class="o">.</span><span class="n">sh</span> <span class="n">prep</span>   <span class="o">&lt;&lt;--</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">sudo</span> <span class="n">to</span> <span class="n">add</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">official</span> <span class="n">packages</span>
+<span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build_gdl</span><span class="o">.</span><span class="n">sh</span> <span class="n">configure</span>
+<span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build_gdl</span><span class="o">.</span><span class="n">sh</span> <span class="n">build</span>
+<span class="p">(</span><span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build_gdl</span><span class="o">.</span><span class="n">sh</span> <span class="n">check</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This efficient and simple way was successfully tested on : Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS; Debian 9, 10, Sid; Fedora 28</p>
@@ -162,7 +163,9 @@ Eventually, you could build gdl with the option “-DINTERACTIVE_GRAPHICS=OFF’
 <li class="toctree-l2 current"><a class="current reference internal" href="#">GDL on Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GDL-on-OSX.html">GDL on OSX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GDL-on-Windows.html">GDL on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Home.html">Home</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Known-issues.html">Known issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tested-systems-%28Linux%2C-BSD%2C-OSX%2C-MSwin%29.html">Tested systems (Linux, BSD, OSX, MSwin)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Third-party-librairies.html">Third party librairies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ToDo-list.html">ToDo list</a></li>
 </ul>
