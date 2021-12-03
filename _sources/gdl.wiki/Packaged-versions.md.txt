@@ -1,0 +1,6 @@
+# Packaged versions
+
+You can see here https://repology.org/project/gnudatalanguage/versions
+the status of packaged version of GDL for your favorite OS.
+
+![GDL packaging status](https://repology.org/badge/vertical-allrepos/gnudatalanguage.svg)
