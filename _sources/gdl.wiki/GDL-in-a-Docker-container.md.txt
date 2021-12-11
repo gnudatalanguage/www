@@ -1,0 +1,2 @@
+# GDL in a Docker container
+[please follow this link.](https://github.com/gnudatalanguage/gdl/discussions/1212#discussioncomment-1785498)
