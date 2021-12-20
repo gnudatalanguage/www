@@ -15,7 +15,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Third party librairies" href="Third-party-librairies.html" /> 
+    <link rel="next" title="Foreword" href="Foreword.html" />
+    <link rel="prev" title="C Compilers" href="C----Compilers.html" /> 
   </head><body>
   <div id="wrap">
     <div id="header">
@@ -47,15 +48,12 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="todo-list">
-<h1>ToDo list<a class="headerlink" href="#todo-list" title="Permalink to this headline">¶</a></h1>
-<p>Some details are still not fixed on GDL.</p>
-<ul class="simple">
-<li><p>adding testsuite to the packages</p></li>
-<li><p>better managing of OpenMP on OSX (trying harder to detect &amp; use it)</p></li>
-<li><p>robust detection of Readline files to avoid mixing with Editline (esp. on OSX)</p></li>
-<li><p>page by page HELP (as it is now available for HELP, /recall_com)</p></li>
-</ul>
+  <section id="command-line-edition-in-gdl">
+<h1>Command Line edition in GDL<a class="headerlink" href="#command-line-edition-in-gdl" title="Permalink to this headline">¶</a></h1>
+<p>The command line edition in GDL is made with libreadline. Nothing like the crude line editing interface of IDL. (remember, you can use <a class="reference external" href="https://github.com/gnudatalanguage/gdlde">the workbench gdlde</a>, too). Notice also how long command lines, even wrapped on the terminal, are easily editable.</p>
+<p>In a nuthshell, to get back a command you entered before, just type ^r (key Control + key “r”) and start typing the text you look for. This goes back in the command stack, just type “return” to execute the same line, or any editing key to edit this line (^A for example).
+To go forward in the command stack, type ^s (but to do that, you must have put your terminal in a mode where flow control with ^s is disabled).</p>
+<p>You can program your line-editing keys at your convenience, see <a class="reference external" href="https://tiswww.case.edu/php/chet/readline/rluserman.html">the readline manual</a></p>
 </section>
 
 
@@ -72,7 +70,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../downloads.html">Downloads</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../wiki.html">Wiki Contents</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="C----Compilers.html">C Compilers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Command-Line-edition-in-GDL.html">Command Line edition in GDL</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Command Line edition in GDL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Foreword.html">Foreword</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GDL-in-a-Docker-container.html">GDL in a Docker container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GDL-on-BSD.html">GDL on BSD</a></li>
@@ -84,7 +82,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Packaged-versions.html">Packaged versions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tested-systems-%28Linux%2C-BSD%2C-OSX%2C-MSwin%29.html">Tested systems (Linux, BSD, OSX, MSwin)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Third-party-librairies.html">Third party librairies</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ToDo list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToDo-list.html">ToDo list</a></li>
 </ul>
 </li>
 </ul>

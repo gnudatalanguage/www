@@ -1,0 +1,8 @@
+# Command Line edition in GDL
+The command line edition in GDL is made with libreadline. Nothing like the crude line editing interface of IDL. (remember, you can use [the workbench gdlde](https://github.com/gnudatalanguage/gdlde), too). Notice also how long command lines, even wrapped on the terminal, are easily editable.
+
+In a nuthshell, to get back a command you entered before, just type ^r (key Control + key "r") and start typing the text you look for. This goes back in the command stack, just type "return" to execute the same line, or any editing key to edit this line (^A for example).
+To go forward in the command stack, type ^s (but to do that, you must have put your terminal in a mode where flow control with ^s is disabled). 
+
+You can program your line-editing keys at your convenience, see [the readline manual](https://tiswww.case.edu/php/chet/readline/rluserman.html) 
+
