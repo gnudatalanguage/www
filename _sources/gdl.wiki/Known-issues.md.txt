@@ -1,7 +1,10 @@
 # Known issues
+- GDL now uses by default the wxWidgets engine for all graphics, plot windows and widgets. This has some consequences, especially if the version of wxWidgets is 3.x : 
+  - DEVICE,SET_GRAPHICS_FUNCTION=x will not work correctly due to the use of PANGO in wxWidgets3 (Linux, Mac --- Windows is OK). Some utilities (Graffer, Look) use this command to draw crosshairs on plots, and the current wxWidgets bug prevents thess lines to be erased, making a mess of the plot. It is advised for the time being to remove the crosshair generation directly by editing the procedure and commenting the relevant code lines. 
+  - Under Unix/Linux at least, the plplot 'new' driver for wxWidgets may be painfully slow in 'painting' large sections of screen. This can be tested by sending the command `surface, dist(100)` : if the plot takes more than ~1s to appear,then you suffer from the plplot bug. We have opened a bug report to plplot maintainers, and consider alternate solutions. In the meantime, it is advised to use the old X11 plotting backend, starting gdl with the switch "`gdl --no-use-wx`". However this will work only if GDL is compiled with -DX11=ON (should be the case with most distributions).
+
 - In presence of Anaconda (a python installer) ther may be some troubles compiling GDL, see [here](https://github.com/gnudatalanguage/gdl/issues/780#issuecomment-642943543)
 
-- old GCC. It is still possible to compile GDL 1.0 versions (rc1, rc2, rc3) with old GC 4.8 versions (e.g. gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4)  but it may give few troubles on few numerics, as shown by _make check_ 
+- old GCC. It is still possible to compile GDL 1.0 versions (rc1, rc2, rc3) with old GC 4.8 versions (e.g. gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4)  but _make check_ show that some numerical functions misbehave. 
 
-- up to now we never solved the fact that on some computers on long int (Long64, ULong, Ulong64 ...) 
-_test\_fix.pro_ may fail or not
+- WINDOWS: projections are slow as the 'proj' library is unable to find its proj.db file under Windows, no matter what the PROJ_LIB environment variable is set. Help welcome.

@@ -44,9 +44,11 @@ FYI, the current version version of CLang (the C/C++ compiler used in the script
 
 ## notes
 
-* App or not App? It is often recommended that a program be put in a app, see [this topic](https://wiki.wxwidgets.org/WxMac-specific_topics#Building_a_MacOSX_application_bundle) . At the moment, GDL does not build as a nice app. Tests show no difference, but have not been very thorough...
-
-* widget menuBar: Several [G|I]DL packages create GUIs using the widget creation commands of GDL. These will often use a menubar. On OSX the menubar is normally the top menu bar, that changes depending on which window has the focus. To get an unified behaviour on all platfroms, GDL widgets keep their menubar atop each widget window (in fact they are 'taskbars'), and the mac menu is desperately void.
+* You may need to **MAKE GDL AN APP**. It is often recommended that a program be put in a app, see [this topic](https://wiki.wxwidgets.org/WxMac-specific_topics#Building_a_MacOSX_application_bundle) . At the moment, GDL does not build as a nice app. But if you use a widget that needs to type some text in text areas or comboboxes, etc, you MUST call gdl as an app.
+The simplest form of an App is just a serie of directories:
+`./gdl/Contents/MacOS/gdl`
+where gdl is a link to the installed gdl : `ln -s ./gdl/Contents/MacOS/gdl  /somewhere/local/bin/gdl `
+In other words, calling gdl as `/somewhere/local/bin/gdl` will not pass keyboard events to widgets, callg gdl as `./gdl/Contents/MacOS/gdl` will. Contributions welcome to get a real App !
 
  * Recent changes in GDL have permitted an 'unified' version compilable indifferently under linux, mac OSX and Windows. It uses wxWidgets for graphics and widgets, on Mac OSX forget X11, welcome wxmac!
 

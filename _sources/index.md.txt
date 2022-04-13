@@ -1,4 +1,3 @@
-GDL - GNU Data Language
 =======================
 
 GDL is a free/libre/open source incremental compiler compatible with IDL (Interactive Data Language) and to some extent with PV-WAVE. 
@@ -46,6 +45,11 @@ See:
 - [GDL on OSX](https://github.com/gnudatalanguage/gdl/wiki/GDL-on-OSX)
 - [GDL on BSD](https://github.com/gnudatalanguage/gdl/wiki/GDL-on-BSD)
 - [GDL on Windows](https://github.com/gnudatalanguage/gdl/wiki/GDL-on-Windows)
+
+Alerts
+-------------------------------------
+
+Check the [WIKI](https://github.com/gnudatalanguage/gdl/wiki/Known-issues) for (transient) alerts.
 
 Dependencies 
 -------------------------------------

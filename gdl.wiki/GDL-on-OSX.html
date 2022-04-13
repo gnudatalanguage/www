@@ -96,8 +96,11 @@
 <section id="notes">
 <h2>notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>App or not App? It is often recommended that a program be put in a app, see <a class="reference external" href="https://wiki.wxwidgets.org/WxMac-specific_topics#Building_a_MacOSX_application_bundle">this topic</a> . At the moment, GDL does not build as a nice app. Tests show no difference, but have not been very thorough…</p></li>
-<li><p>widget menuBar: Several [G|I]DL packages create GUIs using the widget creation commands of GDL. These will often use a menubar. On OSX the menubar is normally the top menu bar, that changes depending on which window has the focus. To get an unified behaviour on all platfroms, GDL widgets keep their menubar atop each widget window (in fact they are ‘taskbars’), and the mac menu is desperately void.</p></li>
+<li><p>You may need to <strong>MAKE GDL AN APP</strong>. It is often recommended that a program be put in a app, see <a class="reference external" href="https://wiki.wxwidgets.org/WxMac-specific_topics#Building_a_MacOSX_application_bundle">this topic</a> . At the moment, GDL does not build as a nice app. But if you use a widget that needs to type some text in text areas or comboboxes, etc, you MUST call gdl as an app.
+The simplest form of an App is just a serie of directories:
+<code class="docutils literal notranslate"><span class="pre">./gdl/Contents/MacOS/gdl</span></code>
+where gdl is a link to the installed gdl : <code class="docutils literal notranslate"><span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">./gdl/Contents/MacOS/gdl</span>&#160; <span class="pre">/somewhere/local/bin/gdl</span> </code>
+In other words, calling gdl as <code class="docutils literal notranslate"><span class="pre">/somewhere/local/bin/gdl</span></code> will not pass keyboard events to widgets, callg gdl as <code class="docutils literal notranslate"><span class="pre">./gdl/Contents/MacOS/gdl</span></code> will. Contributions welcome to get a real App !</p></li>
 <li><p>Recent changes in GDL have permitted an ‘unified’ version compilable indifferently under linux, mac OSX and Windows. It uses wxWidgets for graphics and widgets, on Mac OSX forget X11, welcome wxmac!</p></li>
 </ul>
 </section>
@@ -140,7 +143,14 @@
       <div id="sidebar">
         <h3 style="margin-top: 1.5em;">Navigation</h3>
         <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">GDL - GNU Data Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#getting-gdl">Getting GDL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#alerts">Alerts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#dependencies">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#build-time-dependencies">Build-time dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#support-feedback-and-contributions">Support, feedback and contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#information-resources">Information resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#acknowledgements">Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../screenshots.html">Screenshots</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../downloads.html">Downloads</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../wiki.html">Wiki Contents</a><ul class="current">
