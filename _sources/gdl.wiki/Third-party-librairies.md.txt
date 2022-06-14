@@ -12,6 +12,7 @@ git clone https://salsa.debian.org/debian-astro-team/mpfit
 ```
 
 Many other libraries have been extensively tested and worked well with GDL 1.0.0+, including : 
+- HEALpix by E. Hivon & al ([HEALpix official page and download](https://healpix.sourceforge.io/), [comment on status of GDL 1.0.1](https://healpix.sourceforge.io/doc/html/idl_Using_HEALPix_IDL_facilitie.htm))
 - Ulyss by Ph. Prugniel & al ([Ulyss official page](http://ulyss.univ-lyon1.fr/))
 - ATV by Aaron Barth ([ATV official page](https://www.physics.uci.edu/~barth/atv/))
 (`wget https://www.physics.uci.edu/~barth/atv/atv.pro`) 
