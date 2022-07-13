@@ -1,9 +1,13 @@
 # Known issues
-- GDL now uses by default the wxWidgets engine for all graphics, plot windows and widgets. This has some consequences, especially if the version of wxWidgets is 3.x : 
-  - DEVICE,SET_GRAPHICS_FUNCTION=x will not work correctly due to the use of PANGO in wxWidgets3 (Linux, Mac --- Windows is OK). Some utilities (Graffer, Look) use this command to draw crosshairs on plots, and the current wxWidgets bug prevents thess lines to be erased, making a mess of the plot. It is advised for the time being to remove the crosshair generation directly by editing the procedure and commenting the relevant code lines. 
-  - Under Unix/Linux at least, the plplot 'new' driver for wxWidgets may be painfully slow in 'painting' large sections of screen. This can be tested by sending the command `surface, dist(100)` : if the plot takes more than ~1s to appear,then you suffer from the plplot bug. We have opened a bug report to plplot maintainers, and consider alternate solutions. In the meantime, it is advised to use the old X11 plotting backend, starting gdl with the switch "`gdl --no-use-wx`". However this will work only if GDL is compiled with -DX11=ON (should be the case with most distributions).
+- GDL now uses by default the wxWidgets engine for all graphics, plot windows and widgets. This has a small consequence **ON LINUX+MacOSX**, especially if the version of wxWidgets is 3.x . To avoid it, at the moment, you can use the X11 driver (used for PLOTS only), first by enabling X11 during the compilation (`cmake ... -DX11=ON ...`)  then by calling GDL with the `--no-use-wx` flag or setting the env. var `GDL_DISABLE_WX_PLOTS`. 
 
-- In presence of Anaconda (a python installer) ther may be some troubles compiling GDL, see [here](https://github.com/gnudatalanguage/gdl/issues/780#issuecomment-642943543)
+Now for the problem:
+  - `DEVICE,SET_GRAPHICS_FUNCTION=x` will not work correctly due to the absence of those basic graphic functions in the PANGO library, and in consequence in the in wxWidgets3.x. Some utilities (Graffer, Look) use this command to draw crosshairs on plots, and this PANGO 'feature' prevents crosshair lines to be properly erased, making a mess of the plot. It is advised for the time being to remove the crosshair generation directly by editing the procedure and commenting the relevant code lines. For procedures that use `DEVICE,SET_GRAPHICS_FUNCTION` on PLOT windows (such as BOX_CURSOR) just use the X11 drive for plots as described above. 
+  - If you experience a slowness in plots (like `SURFACE,dist(64)` taking minutes to plot!) , it is because your installation prevents GDL to use its "own" version of plplot's drivers. There will be a message at the start of GDL: `Local drivers not found --- using default ones.` . 
+
+Older issues, not sure if they still hold:
+
+- In presence of Anaconda (a python installer) there may be some troubles compiling GDL, see [here](https://github.com/gnudatalanguage/gdl/issues/780#issuecomment-642943543)
 
 - old GCC. It is still possible to compile GDL 1.0 versions (rc1, rc2, rc3) with old GC 4.8 versions (e.g. gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4)  but _make check_ show that some numerical functions misbehave. 
 
