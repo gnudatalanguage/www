@@ -40,9 +40,10 @@ FYI, the current version version of CLang (the C/C++ compiler used in the script
 
 *or* `Way 2`
 
-- rebuild GDL using fresh libraries from your favorite brew/fink... , the GDL current sources, and cmake. "Compilation notes" below may help you.
+- rebuild GDL using fresh libraries from your favorite brew/fink... , the GDL current sources, and cmake. Make sure you read "Compilation notes" below, some things are tricky.
 
 ## notes
+* GDL uses plplot. plplot NEEDS to be compiled with option DYNDRIVERS=ON . This is *not* what Brew or other installers provide. You need to recompile and install plplot. The script build_gdl.sh of 'Way 1' does it, applying patches in gdl/scripts/deps/macos .
 
 * You may need to **MAKE GDL AN APP**. It is often recommended that a program be put in a app, see [this topic](https://wiki.wxwidgets.org/WxMac-specific_topics#Building_a_MacOSX_application_bundle) . At the moment, GDL does not build as a nice app. But if you use a widget that needs to type some text in text areas or comboboxes, etc, you MUST call gdl as an app.
 The simplest form of an App is just a serie of directories:

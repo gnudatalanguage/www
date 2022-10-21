@@ -92,12 +92,13 @@
 <p>FYI, the current version version of CLang (the C/C++ compiler used in the script by default) is now broken in up-to-date OSX 10.14.6</p>
 <p><em>or</em> <code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">2</span></code></p>
 <ul class="simple">
-<li><p>rebuild GDL using fresh libraries from your favorite brew/fink… , the GDL current sources, and cmake. “Compilation notes” below may help you.</p></li>
+<li><p>rebuild GDL using fresh libraries from your favorite brew/fink… , the GDL current sources, and cmake. Make sure you read “Compilation notes” below, some things are tricky.</p></li>
 </ul>
 </section>
 <section id="notes">
 <h2>notes<a class="headerlink" href="#notes" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
+<li><p>GDL uses plplot. plplot NEEDS to be compiled with option DYNDRIVERS=ON . This is <em>not</em> what Brew or other installers provide. You need to recompile and install plplot. The script build_gdl.sh of ‘Way 1’ does it, applying patches in gdl/scripts/deps/macos .</p></li>
 <li><p>You may need to <strong>MAKE GDL AN APP</strong>. It is often recommended that a program be put in a app, see <a class="reference external" href="https://wiki.wxwidgets.org/WxMac-specific_topics#Building_a_MacOSX_application_bundle">this topic</a> . At the moment, GDL does not build as a nice app. But if you use a widget that needs to type some text in text areas or comboboxes, etc, you MUST call gdl as an app.
 The simplest form of an App is just a serie of directories:
 <code class="docutils literal notranslate"><span class="pre">./gdl/Contents/MacOS/gdl</span></code>
