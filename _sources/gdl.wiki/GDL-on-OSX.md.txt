@@ -4,11 +4,11 @@
 `Way 0`
 
 GDL is available from:
-- [Homebrew](https://brew.sh/): known as gnudatalanguage (brew install gnudatalanguage) : **OBSOLETE Version**
+- [Homebrew](https://formulae.brew.sh/formula/gdl#default) thanks @fxcoudert
 - [Macports](https://www.macports.org/): known as gnudatalanguage, version 1.0.0-rc3 thanks @tenomoto 
-- [Fink](http://finkproject.org/pdb/package.php/gdl): known as gdl, not changed since 2018 ... Please, @Seb!
+- [Fink](http://finkproject.org/pdb/package.php/gdl), thanks @Seb 
 
-SO THESE VERSIONS ARE MOSTLY OBSOLETE. This warning will disappear when the above distributions will be in sync. 
+But probably out-of-date by now :smile:  
 
 At the moment, you can
 -  download the unstable weekly build binaries from https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release, also see [#957](https://github.com/gnudatalanguage/gdl/pull/957)
@@ -18,10 +18,15 @@ At the moment, you can
 0. de-activate any conda (miniconda, anaconda) related env.
 1. [install Homebrew using the one-liner command](https://docs.brew.sh/Installation) 
 1. Using Brew, install the required libraries (cmake, g++ ...). 
-1. Download the gdl code, and run gdl/scripts/build_gdl.sh 3 times:
- - `build_gdl.sh prep` will install the required libraries.
- - `build_gdl.sh configure` will preparer the make file for compilation in next step.
- - `build_gdl.sh build` will build gdl in `build` and install it in `install`. This is the simplest way.
+1. Download the gdl code, and run gdl/scripts/build_gdl.sh several times:
+  - `build_gdl.sh prep` will install the required libraries.
+  - `build_gdl.sh configure` will prepare the make file for compilation in next step.
+  - `build_gdl.sh build` will build gdl in `build`
+  - `build_gdl.sh install`. 
+
+This is the simplest way.
+
+GDL is built with wxWidgets graphic interface, but the X11 graphic windows are still there and can be called by a switch in the gdl command, see output of `gdl -h`
 
 This script is very frequently tested on OSX 10.14.6 and 11.3. Brew may have side effects (updates are frequent and quite long, may have conflict if machine with multi-users, projects asking for login/pass). Usually just reading the messages, using 'brew doctor', passing when login/pass should be enough.
 
@@ -51,7 +56,7 @@ The simplest form of an App is just a serie of directories:
 where gdl is a link to the installed gdl : `ln -s ./gdl/Contents/MacOS/gdl  /somewhere/local/bin/gdl `
 In other words, calling gdl as `/somewhere/local/bin/gdl` will not pass keyboard events to widgets, callg gdl as `./gdl/Contents/MacOS/gdl` will. Contributions welcome to get a real App !
 
- * Recent changes in GDL have permitted an 'unified' version compilable indifferently under linux, mac OSX and Windows. It uses wxWidgets for graphics and widgets, on Mac OSX forget X11, welcome wxmac!
+ * Recent changes in GDL have permitted an 'unified' version compilable indifferently under linux, mac OSX and Windows. It uses wxWidgets for graphics and widgets, on Mac OSX forget X11, welcome wxmac! (but the X11 windows are still available, see how in `gdl -h`)
 
 ## compilation notes
 
@@ -77,4 +82,5 @@ make -j 4
 ```
 
 But in the above, you can remove `-DGEOTIFF=OFF -DHDF=OFF  -DUDUNITS2=OFF -DGRIB=OFF -DGLPK=OFF ` provided you have installed the corresponding library. Each time you add a library and call cmake to recompile: it is **mandatory** to clean the cache before running again cmake (rm -f CMakeCache.txt)
+
 

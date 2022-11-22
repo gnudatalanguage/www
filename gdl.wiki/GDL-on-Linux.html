@@ -65,25 +65,25 @@ don’t really reflect the current status of the code. It would be better to use
 <li><p>Mageia: https://madb.mageia.org/package/show/application/0/arch/x86_64/name/gnudl <strong>1.0.0</strong></p></li>
 <li><p>Debian:</p>
 <ul>
-<li><p>https://packages.debian.org/stable/gnudatalanguage 0.9.9 (too OLD)</p></li>
-<li><p>https://packages.debian.org/unstable/gnudatalanguage <strong>1.0.0</strong></p></li>
-<li><p>https://packages.debian.org/python3-gdl <strong>1.0.0</strong> in ‘unstable’</p></li>
+<li><p>https://packages.debian.org/stable/gnudatalanguage 0.9.9-13 (too OLD)</p></li>
+<li><p>https://packages.debian.org/unstable/gnudatalanguage <strong>1.0.1-4</strong></p></li>
+<li><p>https://packages.debian.org/python3-gdl <strong>1.0.1-4</strong> in ‘unstable’</p></li>
 </ul>
 </li>
 <li><p>Ubuntu:</p>
 <ul>
-<li><p>http://packages.ubuntu.com/gnudatalanguage 0.9.9 (too OLD)</p></li>
-<li><p>https://packages.ubuntu.com/python3-gdl 0.9.9 (too OLD)</p></li>
+<li><p>http://packages.ubuntu.com/gnudatalanguage 1.0.3 in kinetic</p></li>
+<li><p>https://packages.ubuntu.com/python3-gdl 1.0.3 in kinetic</p></li>
 </ul>
 </li>
 <li><p>Gentoo:</p>
 <ul>
-<li><p>https://packages.gentoo.org/packages/dev-lang/gdl <strong>1.0.0</strong></p></li>
+<li><p>https://packages.gentoo.org/packages/dev-lang/gdl 1.0.0 (too old)</p></li>
 </ul>
 </li>
 <li><p>Arch:</p>
 <ul>
-<li><p>https://aur.archlinux.org/packages/gnudatalanguage/ <strong>1.0.0</strong></p></li>
+<li><p>https://aur.archlinux.org/packages/gnudatalanguage/ <strong>1.0.1</strong></p></li>
 </ul>
 </li>
 </ul>
@@ -101,10 +101,11 @@ don’t really reflect the current status of the code. It would be better to use
 <p><code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">1</span></code> using the script <code class="docutils literal notranslate"><span class="pre">scripts/build_gdl.sh</span></code> (assuming you can be <em>sudo</em>)</p>
 <ul class="simple">
 <li><p>Assuming you already have a <a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/C----Compilers">c++ compiler</a> , Cmake (version &gt; 3.2), curl or wget, git</p></li>
-<li><p>Download the gdl code, and run gdl/scripts/build_gdl.sh 2 times:</p></li>
+<li><p>Download the gdl code, and run gdl/scripts/build_gdl.sh several times:</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">prep</span></code> will install the required libraries. (If you are not <em>sudoer</em> you will get a list of libs. your admin. will installed for you.)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">configure</span></code> will run Cmake to prepare the Make file</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">build</span></code> will build gdl in <code class="docutils literal notranslate"><span class="pre">build</span></code> and install it in <code class="docutils literal notranslate"><span class="pre">install</span></code>. This is the simplest way.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">build</span></code> will build gdl in <code class="docutils literal notranslate"><span class="pre">build</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">install</span></code>. This is the simplest way.</p></li>
 </ul>
 <p>A summary for Ubuntu/Debian (for RH/Fedora, just change apt-get by rpm …):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">git</span>
@@ -128,8 +129,8 @@ don’t really reflect the current status of the code. It would be better to use
 <li><p>GDL is written in such a way you can compile it fully in user space, without being <em>root</em>, as long as all the mandatory packages (-dev/-devel) are around. If some packages are missing or outdated (e.g. Eigen3), yes, you can use a version in your user space, giving the path as a parameter to CMake (e.g. -DEIGEN3DIR=/path/to/local/Eigen3)</p></li>
 <li><p>GDL can be compiled with : GCC (GNU C Compiler), Clang (LLVM), icc (Intel C compiler)</p></li>
 <li><p>GDL now requests CMake 3+. On some old systems (Debian 9, U 14.04) you have access to CMake 3+ with package cmake3 or equivalent module (on HPC with module)</p></li>
-<li><p>You will <strong>NEED the wxWidgets library and the plplot drivers for wxWidgets</strong>
-Eventually, you could build gdl with the option “-DINTERACTIVE_GRAPHICS=OFF’ to enable compilation without warnings related to the absence of the adequate plplot driver, but GDL may be unable to open a graphic windows. Sometimes, plplot drivers for wxWindows or Xwin (X11) may be in a separate package, say, <code class="docutils literal notranslate"><span class="pre">plplot-driver-wxwidgets</span></code> . We appreciate returns to update this documentation.</p></li>
+<li><p>You will need the wxWidgets library and the plplot drivers for wxWidgets. Sometimes the plplot drivers are not in the plplot package but in a different one, say, <code class="docutils literal notranslate"><span class="pre">plplot-driver-wxwidgets</span></code> . This is distribution-dependent, search the web.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plplot</span></code> <strong>NEEDS to be compiled with option <code class="docutils literal notranslate"><span class="pre">-DENABLE_DYNDRIVERS=ON</span></code></strong> since GDL uses his own (patched) plplot drivers, they come with the GDL code. Hence the need for a plplot library compiled in such a way as to permit loadable drivers. Normally plplot is distributed this way under linux.</p></li>
 <li><p>When compiling the first time, you may be blocked because one package is missing. After installing it, it is <strong>mandatory</strong> to clean the cache before running again cmake (<code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-f</span> <span class="pre">CMakeCache.txt</span></code>)</p></li>
 <li><p>Compilation. Once all the packages are around, it is quite fast on multi-cores :)</p></li>
 </ul>

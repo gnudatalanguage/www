@@ -13,16 +13,16 @@ don't really reflect the current status of the code. It would be better to use t
 - Fedora: https://src.fedoraproject.org/rpms/gdl **actively maintained.**
 - Mageia: https://madb.mageia.org/package/show/application/0/arch/x86_64/name/gnudl **1.0.0**
 - Debian: 
-  - https://packages.debian.org/stable/gnudatalanguage 0.9.9 (too OLD)
-  - https://packages.debian.org/unstable/gnudatalanguage **1.0.0**
-  - https://packages.debian.org/python3-gdl **1.0.0** in 'unstable'
+  - https://packages.debian.org/stable/gnudatalanguage 0.9.9-13 (too OLD)
+  - https://packages.debian.org/unstable/gnudatalanguage **1.0.1-4**
+  - https://packages.debian.org/python3-gdl **1.0.1-4** in 'unstable'
 - Ubuntu:
-  - http://packages.ubuntu.com/gnudatalanguage 0.9.9 (too OLD)
-  - https://packages.ubuntu.com/python3-gdl 0.9.9 (too OLD)
+  - http://packages.ubuntu.com/gnudatalanguage 1.0.3 in kinetic
+  - https://packages.ubuntu.com/python3-gdl 1.0.3 in kinetic
 - Gentoo:
-  - https://packages.gentoo.org/packages/dev-lang/gdl **1.0.0**
+  - https://packages.gentoo.org/packages/dev-lang/gdl 1.0.0 (too old)
 - Arch:
-  - https://aur.archlinux.org/packages/gnudatalanguage/ **1.0.0**
+  - https://aur.archlinux.org/packages/gnudatalanguage/ **1.0.1**
 
 At the moment, you can
 -  download the unstable weekly build binaries from https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release, also see [#957](https://github.com/gnudatalanguage/gdl/pull/957)
@@ -36,10 +36,11 @@ Two mains paths :
 `Way 1` using the script `scripts/build_gdl.sh` (assuming you can be _sudo_)
 
  -  Assuming you already have a [c++ compiler](https://github.com/gnudatalanguage/gdl/wiki/C----Compilers) , Cmake (version > 3.2), curl or wget, git
- -  Download the gdl code, and run gdl/scripts/build_gdl.sh 2 times:
+ -  Download the gdl code, and run gdl/scripts/build_gdl.sh several times:
  - `build_gdl.sh prep` will install the required libraries. (If you are not _sudoer_ you will get a list of libs. your admin. will installed for you.)
  - `build_gdl.sh configure` will run Cmake to prepare the Make file
- - `build_gdl.sh build` will build gdl in `build` and install it in `install`. This is the simplest way.
+ - `build_gdl.sh build` will build gdl in `build`.
+ - `build_gdl.sh install`. This is the simplest way.
 
 A summary for Ubuntu/Debian (for RH/Fedora, just change apt-get by rpm ...): 
 ```
@@ -70,8 +71,9 @@ This efficient and simple way was successfully tested on : Ubuntu 16.04 LTS, 18.
 - GDL now requests CMake 3+. On some old systems (Debian 9, U 14.04) you have access to CMake 3+ with package cmake3 or equivalent module (on HPC with module) 
 
 
-- You will **NEED the wxWidgets library and the plplot drivers for wxWidgets**
-Eventually, you could build gdl with the option "-DINTERACTIVE_GRAPHICS=OFF' to enable compilation without warnings related to the absence of the adequate plplot driver, but GDL may be unable to open a graphic windows. Sometimes, plplot drivers for wxWindows or Xwin (X11) may be in a separate package, say, `plplot-driver-wxwidgets` . We appreciate returns to update this documentation.
+- You will need the wxWidgets library and the plplot drivers for wxWidgets. Sometimes the plplot drivers are not in the plplot package but in a different one, say, `plplot-driver-wxwidgets` . This is distribution-dependent, search the web.
+
+- `plplot` **NEEDS to be compiled with option `-DENABLE_DYNDRIVERS=ON`** since GDL uses his own (patched) plplot drivers, they come with the GDL code. Hence the need for a plplot library compiled in such a way as to permit loadable drivers. Normally plplot is distributed this way under linux.
 
 - When compiling the first time, you may be blocked because one package is missing. After installing it, it is **mandatory** to clean the cache before running again cmake (`rm -f CMakeCache.txt`)
 
