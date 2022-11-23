@@ -1,0 +1,20 @@
+# How to get a given Pull Request (PR)
+
+If you wan to try a given Pull Request, you have to use a special syntax. Modern tool with simple syntax is available now (gh) but in Debian 10, it is not availalble : 
+
+- the good old way :
+Assuming the PR you want to test is number 9999 (for the name `pr9999` you can use want you want)
+```
+git clone https://github.com/gnudatalanguage/gdl/
+git fetch https://github.com/gnudatalanguage/gdl pull/9999/head:pr9999
+git checkout pr9999
+```
+
+- the super simple syntax with `gh` https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+```
+git clone https://github.com/gnudatalanguage/gdl/
+gh pr list           # to have the list of pending PR
+gh pr checkout 9999  # assuming PR 9999 is in the previous list
+```
+
+

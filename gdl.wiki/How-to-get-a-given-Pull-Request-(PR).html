@@ -17,7 +17,8 @@
     <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Third party librairies" href="Third-party-librairies.html" /> 
+    <link rel="next" title="Known issues" href="Known-issues.html" />
+    <link rel="prev" title="Home" href="Home.html" /> 
   </head><body>
   <div id="wrap">
     <div id="header">
@@ -49,15 +50,26 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="todo-list">
-<h1>ToDo list<a class="headerlink" href="#todo-list" title="Permalink to this heading">¶</a></h1>
-<p>Some details are still not fixed on GDL.</p>
+  <section id="how-to-get-a-given-pull-request-pr">
+<h1>How to get a given Pull Request (PR)<a class="headerlink" href="#how-to-get-a-given-pull-request-pr" title="Permalink to this heading">¶</a></h1>
+<p>If you wan to try a given Pull Request, you have to use a special syntax. Modern tool with simple syntax is available now (gh) but in Debian 10, it is not availalble :</p>
 <ul class="simple">
-<li><p>adding testsuite to the packages</p></li>
-<li><p>better managing of OpenMP on OSX (trying harder to detect &amp; use it)</p></li>
-<li><p>robust detection of Readline files to avoid mixing with Editline (esp. on OSX)</p></li>
-<li><p>page by page HELP (as it is now available for HELP, /recall_com)</p></li>
+<li><p>the good old way :
+Assuming the PR you want to test is number 9999 (for the name <code class="docutils literal notranslate"><span class="pre">pr9999</span></code> you can use want you want)</p></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gnudatalanguage</span><span class="o">/</span><span class="n">gdl</span><span class="o">/</span>
+<span class="n">git</span> <span class="n">fetch</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gnudatalanguage</span><span class="o">/</span><span class="n">gdl</span> <span class="n">pull</span><span class="o">/</span><span class="mi">9999</span><span class="o">/</span><span class="n">head</span><span class="p">:</span><span class="n">pr9999</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">pr9999</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>the super simple syntax with <code class="docutils literal notranslate"><span class="pre">gh</span></code> https://github.com/cli/cli/blob/trunk/docs/install_linux.md</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gnudatalanguage</span><span class="o">/</span><span class="n">gdl</span><span class="o">/</span>
+<span class="n">gh</span> <span class="n">pr</span> <span class="nb">list</span>           <span class="c1"># to have the list of pending PR</span>
+<span class="n">gh</span> <span class="n">pr</span> <span class="n">checkout</span> <span class="mi">9999</span>  <span class="c1"># assuming PR 9999 is in the previous list</span>
+</pre></div>
+</div>
 </section>
 
 
@@ -89,12 +101,12 @@
 <li class="toctree-l2"><a class="reference internal" href="GDL-on-OSX.html">GDL on OSX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GDL-on-Windows.html">GDL on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Home.html">Home</a></li>
-<li class="toctree-l2"><a class="reference internal" href="How-to-get-a-given-Pull-Request-%28PR%29.html">How to get a given Pull Request (PR)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">How to get a given Pull Request (PR)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Known-issues.html">Known issues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Packaged-versions.html">Packaged versions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tested-systems-%28Linux%2C-BSD%2C-OSX%2C-MSwin%29.html">Tested systems (Linux, BSD, OSX, MSwin)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Third-party-librairies.html">Third party librairies</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ToDo list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToDo-list.html">ToDo list</a></li>
 </ul>
 </li>
 </ul>
