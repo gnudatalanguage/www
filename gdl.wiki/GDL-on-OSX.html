@@ -138,6 +138,12 @@ In other words, calling gdl as <code class="docutils literal notranslate"><span 
 </div>
 <p>But in the above, you can remove <code class="docutils literal notranslate"><span class="pre">-DGEOTIFF=OFF</span> <span class="pre">-DHDF=OFF</span>&#160; <span class="pre">-DUDUNITS2=OFF</span> <span class="pre">-DGRIB=OFF</span> <span class="pre">-DGLPK=OFF</span> </code> provided you have installed the corresponding library. Each time you add a library and call cmake to recompile: it is <strong>mandatory</strong> to clean the cache before running again cmake (rm -f CMakeCache.txt)</p>
 </section>
+<section id="git-issues">
+<h2>Git issues<a class="headerlink" href="#git-issues" title="Permalink to this heading">¶</a></h2>
+<p>Since an upgrade of OSX, my <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> was not OK any more (and the ssh -X too … stupid system). A effective solution for Git was :
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">url.https://github.com/.insteadOf</span> <span class="pre">git://github.com/</span></code>
+(from <a class="reference external" href="https://stackoverflow.com/questions/72486457/fatal-unable-to-connect-to-github-com-github-com0-140-82-121-4-errno-unkno">stackoverflow</a></p>
+</section>
 </section>
 
 

@@ -6,6 +6,7 @@ If you wan to try a given Pull Request, you have to use a special syntax. Modern
 Assuming the PR you want to test is number 9999 (for the name `pr9999` you can use want you want)
 ```
 git clone https://github.com/gnudatalanguage/gdl/
+cd gdl
 git fetch https://github.com/gnudatalanguage/gdl pull/9999/head:pr9999
 git checkout pr9999
 ```

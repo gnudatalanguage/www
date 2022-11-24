@@ -84,3 +84,8 @@ make -j 4
 But in the above, you can remove `-DGEOTIFF=OFF -DHDF=OFF  -DUDUNITS2=OFF -DGRIB=OFF -DGLPK=OFF ` provided you have installed the corresponding library. Each time you add a library and call cmake to recompile: it is **mandatory** to clean the cache before running again cmake (rm -f CMakeCache.txt)
 
 
+## Git issues
+
+Since an upgrade of OSX, my `git pull` was not OK any more (and the ssh -X too ... stupid system). A effective solution for Git was : 
+`git config --global url.https://github.com/.insteadOf git://github.com/`
+(from [stackoverflow](https://stackoverflow.com/questions/72486457/fatal-unable-to-connect-to-github-com-github-com0-140-82-121-4-errno-unkno)
