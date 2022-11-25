@@ -123,7 +123,9 @@ don’t really reflect the current status of the code. It would be better to use
 </pre></div>
 </div>
 <p>This efficient and simple way was successfully tested on : Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS; Debian 9, 10, Sid; Fedora 28</p>
-<p>### cmake:</p>
+</section>
+<section id="cmake">
+<h3>cmake:<a class="headerlink" href="#cmake" title="Permalink to this heading">¶</a></h3>
 <p><em>or, traditional way</em>,<code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">2</span></code> using CMake :</p>
 <ul class="simple">
 <li><p>GDL is written in such a way you can compile it fully in user space, without being <em>root</em>, as long as all the mandatory packages (-dev/-devel) are around. If some packages are missing or outdated (e.g. Eigen3), yes, you can use a version in your user space, giving the path as a parameter to CMake (e.g. -DEIGEN3DIR=/path/to/local/Eigen3)</p></li>

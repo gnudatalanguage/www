@@ -60,7 +60,7 @@ cd gdl
 
 This efficient and simple way was successfully tested on : Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS; Debian 9, 10, Sid; Fedora 28
 
-### cmake:
+### cmake:
 
 *or, traditional way*,`Way 2` using CMake :
 
