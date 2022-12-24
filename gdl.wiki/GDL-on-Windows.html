@@ -61,7 +61,9 @@
 </ul>
 </li>
 </ul>
-<p>The easiest way to get GDL running is via <code class="docutils literal notranslate"><span class="pre">GDL</span> <span class="pre">Installer</span></code>. It will install GDL on your machine automatically. For 64 bit builds, you can also choose whether to install <code class="docutils literal notranslate"><span class="pre">GDL</span> <span class="pre">Workbench</span></code>, an Eclipse-based IDE for GDL (for more information, visit https://github.com/gnudatalanguage/gdlde).</p>
+<p><strong>We recommend to get GDL via the</strong> <code class="docutils literal notranslate"><span class="pre">GDL</span> <span class="pre">Installer</span></code>. It will install GDL on your machine automatically. For 64 bit builds, you can also choose whether to install <code class="docutils literal notranslate"><span class="pre">GDL</span> <span class="pre">Workbench</span></code>, an Eclipse-based IDE for GDL (for more information, visit https://github.com/gnudatalanguage/gdlde).</p>
+<p>Do not panic, if the weekly relase has no windows installer, you can still get one using the compilation method below.</p>
+<p><strong>Using the Windows Installer is almost the only way today</strong> to insure modified drivers for the plplot library to be found by the executable. Other installations (such as decribed below) may or not, depending on the history, deliver the correct driver at the correct location, making GDL unstable. As using an installer is normal for normal users, we feel this complex situation is correctly handled for now.</p>
 <p>Currently, there are three different types of builds:</p>
 <ul class="simple">
 <li><p>mini: only includes mandatory libraries to run GDL.</p></li>
@@ -116,7 +118,7 @@ $ ls install <span class="c1"># compiled results will be here</span>
 </pre></div>
 </div>
 <ol class="simple">
-<li><p>(Optional) package GDL into zip and NSIS installer:</p></li>
+<li><p><strong>IMPORTANT:</strong>  package GDL into zip and NSIS installer:</p></li>
 </ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">GDLDE_VERSION</span><span class="o">=</span>v1.0.0 <span class="c1"># replace this with any newer release</span>
 $ gdl/scripts/build_gdl.sh pack
@@ -124,6 +126,7 @@ $ ls package <span class="c1"># packages will be here</span>
 </pre></div>
 </div>
 <p>It is recommended to use <code class="docutils literal notranslate"><span class="pre">gdl/scripts/build_gdl.sh</span> <span class="pre">build</span></code> (instead of just “make”) anytime you download a new version of GDL sources, as the script adds magic of its own.</p>
+<p><strong>IMPORTANT:</strong> You can probably use the ‘installed’ gdl but it is recommended to use the installer just made above (<code class="docutils literal notranslate"><span class="pre">gdl/scripts/build_gdl.sh</span> <span class="pre">pack</span></code>) to install the new GDL, this will solve the problem of correct plplot graphics driver.</p>
 </section>
 </section>
 

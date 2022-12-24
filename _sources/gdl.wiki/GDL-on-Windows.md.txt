@@ -4,7 +4,11 @@
 - Weekly builds (unstable, released every Wednesday)
   - https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release
 
-The easiest way to get GDL running is via ```GDL Installer```. It will install GDL on your machine automatically. For 64 bit builds, you can also choose whether to install ```GDL Workbench```, an Eclipse-based IDE for GDL (for more information, visit https://github.com/gnudatalanguage/gdlde).
+**We recommend to get GDL via the** ```GDL Installer```. It will install GDL on your machine automatically. For 64 bit builds, you can also choose whether to install ```GDL Workbench```, an Eclipse-based IDE for GDL (for more information, visit https://github.com/gnudatalanguage/gdlde). 
+
+Do not panic, if the weekly relase has no windows installer, you can still get one using the compilation method below.
+
+**Using the Windows Installer is almost the only way today** to insure modified drivers for the plplot library to be found by the executable. Other installations (such as decribed below) may or not, depending on the history, deliver the correct driver at the correct location, making GDL unstable. As using an installer is normal for normal users, we feel this complex situation is correctly handled for now.
 
 Currently, there are three different types of builds:
 - mini: only includes mandatory libraries to run GDL.
@@ -47,10 +51,12 @@ $ ls install # compiled results will be here
 ```shell
 $ gdl/scripts/build_gdl.sh check
 ```
-4. (Optional) package GDL into zip and NSIS installer:
+4. **IMPORTANT:**  package GDL into zip and NSIS installer:
 ```shell
 $ export GDLDE_VERSION=v1.0.0 # replace this with any newer release
 $ gdl/scripts/build_gdl.sh pack
 $ ls package # packages will be here
 ```
 It is recommended to use `gdl/scripts/build_gdl.sh build` (instead of just "make") anytime you download a new version of GDL sources, as the script adds magic of its own.
+
+**IMPORTANT:** You can probably use the 'installed' gdl but it is recommended to use the installer just made above (`gdl/scripts/build_gdl.sh pack`) to install the new GDL, this will solve the problem of correct plplot graphics driver.
