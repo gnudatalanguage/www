@@ -1,10 +1,9 @@
 # GDL on Windows
-## Download Binaries
+## Download the ```GDL Installer```
 
-- Weekly builds (unstable, released every Wednesday)
-  - https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release
+- Found in [Weekly builds](https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release)
 
-**We recommend to get GDL via the** ```GDL Installer```. It will install GDL on your machine automatically. For 64 bit builds, you can also choose whether to install ```GDL Workbench```, an Eclipse-based IDE for GDL (for more information, visit https://github.com/gnudatalanguage/gdlde). 
+It will install GDL on your machine automatically. For 64 bit builds, you can also choose whether to install ```GDL Workbench```, an Eclipse-based IDE for GDL (for more information, visit https://github.com/gnudatalanguage/gdlde). 
 
 Do not panic, if the weekly relase has no windows installer, you can still get one using the compilation method below.
 

@@ -1,17 +1,16 @@
 # GDL on OSX
-## packages
-
 `Way 0`
 
 GDL is available from:
 - [Homebrew](https://formulae.brew.sh/formula/gdl#default) thanks @fxcoudert
-- [Macports](https://www.macports.org/): known as gnudatalanguage, version 1.0.0-rc3 thanks @tenomoto 
+- [Macports](https://www.macports.org/): known as gnudatalanguage, version 1.0.0-rc3 thanks @tenomoto -- version for M1 available
 - [Fink](http://finkproject.org/pdb/package.php/gdl), thanks @Seb 
 
-But probably out-of-date by now :smile:  
+**But watch carefully, those distributions may be well out-of-date by now**, as GDL is continuously improving (see what happened on our Github repo since)  
 
-At the moment, you can
--  download the unstable weekly build binaries from https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release, also see [#957](https://github.com/gnudatalanguage/gdl/pull/957)
+So the **easiest now** is, since [#1457](https://github.com/gnudatalanguage/gdl/pull/1459), to **just download the unstable [weekly DMG](https://github.com/gnudatalanguage/gdl/releases/download/weekly-release/gdl-macOS-x86_64-standard.dmg)** and use it.
+
+**Or the stable one, see [Releases](https://github.com/gnudatalanguage/gdl/releases)**
 
 *or* `Way 1`
 
