@@ -75,47 +75,47 @@
 <li><p>Download and install <a class="reference external" href="https://www.msys2.org/">MSYS2</a>.  When complete, run “MSYS MinGW 64-bit” from Start menu.</p></li>
 <li><p>Set environment variables.</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">ROOT_DIR</span><span class="o">=</span>/path/to/store/everything
-$ <span class="nb">export</span> <span class="nv">Platform</span><span class="o">=</span>x86_64 <span class="c1"># or &#39;i686&#39; for 32 bit build</span>
-$ <span class="nb">export</span> <span class="nv">DEPS</span><span class="o">=</span>standard <span class="c1"># or &#39;debug&#39; or &#39;headless&#39;</span>
-$ <span class="nb">export</span> <span class="nv">Configuration</span><span class="o">=</span>Release <span class="c1"># or &#39;Debug&#39;. linking of GDL in &#39;Debug&#39; is *extremely slow* </span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">ROOT_DIR</span><span class="o">=</span>/path/to/store/everything
+$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">Platform</span><span class="o">=</span>x86_64<span class="w"> </span><span class="c1"># or &#39;i686&#39; for 32 bit build</span>
+$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">DEPS</span><span class="o">=</span>standard<span class="w"> </span><span class="c1"># or &#39;debug&#39; or &#39;headless&#39;</span>
+$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">Configuration</span><span class="o">=</span>Release<span class="w"> </span><span class="c1"># or &#39;Debug&#39;. linking of GDL in &#39;Debug&#39; is *extremely slow* </span>
 </pre></div>
 </div>
 <ol class="simple">
 <li><p>Install packages to compile GDL.</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ pacman -S mingw-w64-<span class="si">${</span><span class="nv">Platform</span><span class="si">}</span>-toolchain mingw-w64-<span class="si">${</span><span class="nv">Platform</span><span class="si">}</span>-cmake mingw-w64-<span class="si">${</span><span class="nv">Platform</span><span class="si">}</span>-nsis zip unzip tar zstd git base-devel
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>mingw-w64-<span class="si">${</span><span class="nv">Platform</span><span class="si">}</span>-toolchain<span class="w"> </span>mingw-w64-<span class="si">${</span><span class="nv">Platform</span><span class="si">}</span>-cmake<span class="w"> </span>mingw-w64-<span class="si">${</span><span class="nv">Platform</span><span class="si">}</span>-nsis<span class="w"> </span>zip<span class="w"> </span>unzip<span class="w"> </span>tar<span class="w"> </span>zstd<span class="w"> </span>git<span class="w"> </span>base-devel
 </pre></div>
 </div>
 <ol class="simple">
 <li><p>cd to <code class="docutils literal notranslate"><span class="pre">ROOT_DIR</span></code> and clone GDL.</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> <span class="nv">$ROOT_DIR</span>
-$ git clone https://github.com/gnudatalanguage/gdl
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$ROOT_DIR</span>
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/gnudatalanguage/gdl
 </pre></div>
 </div>
 <ol class="simple">
 <li><p>Build GDL:</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ gdl/scripts/build_gdl.sh prep <span class="c1"># download external libararies</span>
-$ gdl/scripts/build_gdl.sh configure <span class="c1"># run CMake to prepare the make file</span>
-$ gdl/scripts/build_gdl.sh build <span class="c1"># build GDL</span>
-$ gdl/scripts/build_gdl.sh install <span class="c1"># install GDL</span>
-$ ls install <span class="c1"># compiled results will be here</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gdl/scripts/build_gdl.sh<span class="w"> </span>prep<span class="w"> </span><span class="c1"># download external libararies</span>
+$<span class="w"> </span>gdl/scripts/build_gdl.sh<span class="w"> </span>configure<span class="w"> </span><span class="c1"># run CMake to prepare the make file</span>
+$<span class="w"> </span>gdl/scripts/build_gdl.sh<span class="w"> </span>build<span class="w"> </span><span class="c1"># build GDL</span>
+$<span class="w"> </span>gdl/scripts/build_gdl.sh<span class="w"> </span>install<span class="w"> </span><span class="c1"># install GDL</span>
+$<span class="w"> </span>ls<span class="w"> </span>install<span class="w"> </span><span class="c1"># compiled results will be here</span>
 </pre></div>
 </div>
 <ol class="simple">
 <li><p>(Optional) run tests:</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ gdl/scripts/build_gdl.sh check
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gdl/scripts/build_gdl.sh<span class="w"> </span>check
 </pre></div>
 </div>
 <ol class="simple">
 <li><p><strong>IMPORTANT:</strong>  package GDL into zip and NSIS installer:</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">GDLDE_VERSION</span><span class="o">=</span>v1.0.0 <span class="c1"># replace this with any newer release</span>
-$ gdl/scripts/build_gdl.sh pack
-$ ls package <span class="c1"># packages will be here</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">GDLDE_VERSION</span><span class="o">=</span>v1.0.0<span class="w"> </span><span class="c1"># replace this with any newer release</span>
+$<span class="w"> </span>gdl/scripts/build_gdl.sh<span class="w"> </span>pack
+$<span class="w"> </span>ls<span class="w"> </span>package<span class="w"> </span><span class="c1"># packages will be here</span>
 </pre></div>
 </div>
 <p>It is recommended to use <code class="docutils literal notranslate"><span class="pre">gdl/scripts/build_gdl.sh</span> <span class="pre">build</span></code> (instead of just “make”) anytime you download a new version of GDL sources, as the script adds magic of its own.</p>
