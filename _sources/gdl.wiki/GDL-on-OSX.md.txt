@@ -1,4 +1,6 @@
 # GDL on OSX
+FOREWORD: Warning, M1 users: gdl is not fully working on M1 'natively' yet, probably because many libraries have not been ported to M1. Building gdl will largely depend on your installed libraries. 
+
 `Way 0`
 
 GDL is available from:
