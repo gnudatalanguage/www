@@ -7,7 +7,7 @@
 
 ## packages:
 
-Warning : we tried hard to deliver a 1.0.0 version, the code is actively changed, a lot of small or important bugs have been corrected in rc1, rc2, rc3 and in the current Git version ... As long as a 1.0.0 version is not delivered, please consider that most packages
+As long as a 1.0.2 version is not delivered, please consider that most packages
 don't really reflect the current status of the code. It would be better to use the weekly unstable releases !
 
 - Fedora: https://src.fedoraproject.org/rpms/gdl **actively maintained.**
@@ -28,7 +28,7 @@ At the moment, you can
 -  download the unstable weekly build binaries from https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release, also see [#957](https://github.com/gnudatalanguage/gdl/pull/957)
 
 ## Compilation:
-*or* you can compile the code
+*or* you can compile the code.
 
 Two mains paths : 
 
