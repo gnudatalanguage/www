@@ -50,6 +50,7 @@
   <section id="known-issues">
 <h1>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this heading">¶</a></h1>
 <ul class="simple">
+<li><p>Did you use the<code class="docutils literal notranslate"> <span class="pre">--recursive</span></code> while cloning gdl ?</p></li>
 <li><p>GDL now uses by default the wxWidgets engine for all graphics, plot windows and widgets. You can optionally use the X11 driver (for PLOTS only), first by enabling X11 during the compilation (<code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">...</span> <span class="pre">-DX11=ON</span> <span class="pre">...</span></code>)  then by calling GDL with the <code class="docutils literal notranslate"><span class="pre">--no-use-wx</span></code> flag or setting the env. var <code class="docutils literal notranslate"><span class="pre">GDL_DISABLE_WX_PLOTS</span></code>. X11 is not available under Windows.</p></li>
 </ul>
 <p>There are still issues with the wxWidgets engine, that you may encounter:</p>

@@ -36,7 +36,7 @@ $ pacman -S mingw-w64-${Platform}-toolchain mingw-w64-${Platform}-cmake mingw-w6
 3. cd to `ROOT_DIR` and clone GDL.
 ```shell
 $ cd $ROOT_DIR
-$ git clone https://github.com/gnudatalanguage/gdl
+$ git clone --recursive https://github.com/gnudatalanguage/gdl
 ```
 2. Build GDL:
 ```shell

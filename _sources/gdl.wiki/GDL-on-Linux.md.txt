@@ -50,7 +50,7 @@ apt-get install cmake
 apt-get install g++
 mkdir GDL
 cd GDL
-git clone https://github.com/gnudatalanguage/gdl
+git clone --recursive https://github.com/gnudatalanguage/gdl
 cd gdl
 ./scripts/build_gdl.sh prep   <<-- need to be sudo to add set of official packages
 ./scripts/build_gdl.sh configure
@@ -80,7 +80,7 @@ This efficient and simple way was successfully tested on : Ubuntu 16.04 LTS, 18.
 - Compilation. Once all the packages are around, it is quite fast on multi-cores :)
 
 ```
-git clone https://github.com/gnudatalanguage/gdl
+git clone --recursive https://github.com/gnudatalanguage/gdl
 cd gdl
 mkdir build
 cd build

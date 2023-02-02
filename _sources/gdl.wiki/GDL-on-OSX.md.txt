@@ -35,7 +35,7 @@ A summary working on up-to-date 10.14.6 & 11.3, assuming : Xcode up-to-date, you
 ```
 brew install git
 brew install cmake
-git clone https://github.com/gnudatalanguage/gdl
+git clone --recursive https://github.com/gnudatalanguage/gdl
 cd gdl
 bash scripts/build_gdl.sh prep
 bash scripts/build_gdl.sh configure
@@ -74,7 +74,7 @@ cmake . [others flags] -DREADLINEDIR=/usr/local/opt/readline/
 * An example working (tested) on OSX 10.11, 10.12 & 10.14 (with Readline provided by Brew, and Cmake >= 3.0) : 
 
 ```
-git clone https://github.com/gnudatalanguage/gdl
+git clone --recursive https://github.com/gnudatalanguage/gdl
 cd gdl
 mkdir build
 cd build
