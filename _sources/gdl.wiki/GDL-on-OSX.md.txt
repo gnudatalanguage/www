@@ -10,9 +10,17 @@ GDL is available from:
 
 **But watch carefully, those distributions may be well out-of-date by now**, as GDL is continuously improving (see what happened on our Github repo since)  
 
-So the **easiest now** is, since [#1457](https://github.com/gnudatalanguage/gdl/pull/1459), to **just download the unstable [weekly DMG](https://github.com/gnudatalanguage/gdl/releases/download/weekly-release/gdl-macOS-x86_64-standard.dmg)** and use it.
+So the **easiest now** is, since [#1457](https://github.com/gnudatalanguage/gdl/pull/1459), to **just download the unstable [weekly DMG](https://github.com/gnudatalanguage/gdl/releases/download/weekly-release/gdl-macOS-x86_64-standard.dmg)** and use it. The application is not permitted to run by Apple, so here is a simple solution to enable it permanently:
+1. download the dmg file, open it (it looks like a folder). Put "GNU Data Language" in the Applications folder. (Put "GDL Workbench" too).
+1. open a terminal
+1. type `spctl --add /Applications/GNU Data Language.app` .
+1. Enter your password in the popup asking for permission.
+1. Now you can use the `GNU Data Language` of the `Applications` folder without trouble.
+1. You can do the same for `GDL Workbench`
 
-**Or the stable one, see [Releases](https://github.com/gnudatalanguage/gdl/releases)**
+Note: *There are stable DMGs in [Releases](https://github.com/gnudatalanguage/gdl/releases)*
+
+***
 
 *or* `Way 1`
 
@@ -43,6 +51,8 @@ bash scripts/build_gdl.sh build
 ```
 
 FYI, the current version version of CLang (the C/C++ compiler used in the script by default) is now broken in up-to-date OSX 10.14.6
+
+***
 
 *or* `Way 2`
 

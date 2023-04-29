@@ -58,8 +58,17 @@
 <li><p><a class="reference external" href="http://finkproject.org/pdb/package.php/gdl">Fink</a>, thanks &#64;Seb</p></li>
 </ul>
 <p><strong>But watch carefully, those distributions may be well out-of-date by now</strong>, as GDL is continuously improving (see what happened on our Github repo since)</p>
-<p>So the <strong>easiest now</strong> is, since <a class="reference external" href="https://github.com/gnudatalanguage/gdl/pull/1459">#1457</a>, to <strong>just download the unstable <a class="reference external" href="https://github.com/gnudatalanguage/gdl/releases/download/weekly-release/gdl-macOS-x86_64-standard.dmg">weekly DMG</a></strong> and use it.</p>
-<p><strong>Or the stable one, see <a class="reference external" href="https://github.com/gnudatalanguage/gdl/releases">Releases</a></strong></p>
+<p>So the <strong>easiest now</strong> is, since <a class="reference external" href="https://github.com/gnudatalanguage/gdl/pull/1459">#1457</a>, to <strong>just download the unstable <a class="reference external" href="https://github.com/gnudatalanguage/gdl/releases/download/weekly-release/gdl-macOS-x86_64-standard.dmg">weekly DMG</a></strong> and use it. The application is not permitted to run by Apple, so here is a simple solution to enable it permanently:</p>
+<ol class="simple">
+<li><p>download the dmg file, open it (it looks like a folder). Put “GNU Data Language” in the Applications folder. (Put “GDL Workbench” too).</p></li>
+<li><p>open a terminal</p></li>
+<li><p>type <code class="docutils literal notranslate"><span class="pre">spctl</span> <span class="pre">--add</span> <span class="pre">/Applications/GNU</span> <span class="pre">Data</span> <span class="pre">Language.app</span></code> .</p></li>
+<li><p>Enter your password in the popup asking for permission.</p></li>
+<li><p>Now you can use the <code class="docutils literal notranslate"><span class="pre">GNU</span> <span class="pre">Data</span> <span class="pre">Language</span></code> of the <code class="docutils literal notranslate"><span class="pre">Applications</span></code> folder without trouble.</p></li>
+<li><p>You can do the same for <code class="docutils literal notranslate"><span class="pre">GDL</span> <span class="pre">Workbench</span></code></p></li>
+</ol>
+<p>Note: <em>There are stable DMGs in <a class="reference external" href="https://github.com/gnudatalanguage/gdl/releases">Releases</a></em></p>
+<hr class="docutils" />
 <p><em>or</em> <code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">1</span></code></p>
 <ol class="simple">
 <li><p>de-activate any conda (miniconda, anaconda) related env.</p></li>
@@ -87,6 +96,7 @@
 </pre></div>
 </div>
 <p>FYI, the current version version of CLang (the C/C++ compiler used in the script by default) is now broken in up-to-date OSX 10.14.6</p>
+<hr class="docutils" />
 <p><em>or</em> <code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">2</span></code></p>
 <ul class="simple">
 <li><p>rebuild GDL using fresh libraries from your favorite brew/fink… , the GDL current sources, and cmake. Make sure you read “Compilation notes” below, some things are tricky.</p></li>
