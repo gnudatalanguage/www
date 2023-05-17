@@ -1,0 +1,19 @@
+# Local test coverage of GDL using gcov lcov
+OK, we do use the service offered by Codecov but you can compute locally the estimation of test coverage of GDL by the files in the testsuite/
+using `gcov` and `lcov`. Thanks to @Saynkas for this very promising feedback.
+
+```
+cmake .. -DCMAKE_INSTALL_PREFIX=$PWD \
+-DCMAKE_CXX_FLAGS:STRING="-fprofile-arcs -ftest-coverage" \
+-DCMAKE_C_FLAGS:STRING="-fprofile-arcs -ftest-coverage"
+make -j 4 install
+lcov  --capture --initial --directory . --output-file coverage1.info
+make -k test
+lcov --capture --directory . --output-file coverage2.info
+lcov --add-tracefile ./coverage1.info --add-tracefile ./coverage2.info --output-file coveragefused.info
+lcov --remove coveragefused.info "/usr*" "CMakeFiles/3.16.3/*" -o coveragefused.info
+genhtml coveragefused.info --output-directory out
+firefox out/index.html &
+```
+
+We clearly have to extend the tests to improve the coverage of the c/c++ code !
