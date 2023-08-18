@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,9 +8,9 @@
 <title>GDL - GNU Data Language</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../_static/colourise.css?v=2cc236f6" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="GDL on Windows" href="GDL-on-Windows.html" />
@@ -47,7 +47,7 @@
           <div class="body" role="main">
             
   <section id="gdl-on-osx">
-<h1>GDL on OSX<a class="headerlink" href="#gdl-on-osx" title="Permalink to this heading">¶</a></h1>
+<h1>GDL on OSX<a class="headerlink" href="#gdl-on-osx" title="Link to this heading">¶</a></h1>
 <p>FOREWORD: Warning, M1 users: gdl is not fully working on M1 ‘natively’ yet, probably because many libraries have not been ported to M1. Building gdl will largely depend on your installed libraries.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">0</span></code></p>
 <p>GDL is available from:</p>
@@ -101,7 +101,7 @@
 <li><p>rebuild GDL using fresh libraries from your favorite brew/fink… , the GDL current sources, and cmake. Make sure you read “Compilation notes” below, some things are tricky.</p></li>
 </ul>
 <section id="notes">
-<h2>notes<a class="headerlink" href="#notes" title="Permalink to this heading">¶</a></h2>
+<h2>notes<a class="headerlink" href="#notes" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>GDL uses plplot. plplot NEEDS to be compiled with option DYNDRIVERS=ON . This is <em>not</em> what Brew or other installers provide. You need to recompile and install plplot. The script build_gdl.sh of ‘Way 1’ does it, applying patches in gdl/scripts/deps/macos .</p></li>
 <li><p>You may need to <strong>MAKE GDL AN APP</strong>. It is often recommended that a program be put in a app, see <a class="reference external" href="https://wiki.wxwidgets.org/WxMac-specific_topics#Building_a_MacOSX_application_bundle">this topic</a> . At the moment, GDL does not build as a nice app. But if you use a widget that needs to type some text in text areas or comboboxes, etc, you MUST call gdl as an app.
@@ -113,7 +113,7 @@ In other words, calling gdl as <code class="docutils literal notranslate"><span 
 </ul>
 </section>
 <section id="compilation-notes">
-<h2>compilation notes<a class="headerlink" href="#compilation-notes" title="Permalink to this heading">¶</a></h2>
+<h2>compilation notes<a class="headerlink" href="#compilation-notes" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Depending of OSX version, default Clang may or not come with OpenMP. If OpenMP is not around, we need to deactivated it :</p></li>
 </ul>
@@ -141,7 +141,7 @@ In other words, calling gdl as <code class="docutils literal notranslate"><span 
 <p>But in the above, you can remove <code class="docutils literal notranslate"><span class="pre">-DGEOTIFF=OFF</span> <span class="pre">-DHDF=OFF</span>&#160; <span class="pre">-DUDUNITS2=OFF</span> <span class="pre">-DGRIB=OFF</span> <span class="pre">-DGLPK=OFF</span> </code> provided you have installed the corresponding library. Each time you add a library and call cmake to recompile: it is <strong>mandatory</strong> to clean the cache before running again cmake (rm -f CMakeCache.txt)</p>
 </section>
 <section id="git-issues">
-<h2>Git issues<a class="headerlink" href="#git-issues" title="Permalink to this heading">¶</a></h2>
+<h2>Git issues<a class="headerlink" href="#git-issues" title="Link to this heading">¶</a></h2>
 <p>Since an upgrade of OSX, my <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> was not OK any more (and the ssh -X too … stupid system). A effective solution for Git was :
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">url.https://github.com/.insteadOf</span> <span class="pre">git://github.com/</span></code>
 (from <a class="reference external" href="https://stackoverflow.com/questions/72486457/fatal-unable-to-connect-to-github-com-github-com0-140-82-121-4-errno-unkno">stackoverflow</a></p>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,9 +8,9 @@
 <title>GDL - GNU Data Language</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../_static/colourise.css?v=2cc236f6" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="GDL on OSX" href="GDL-on-OSX.html" />
@@ -47,13 +47,13 @@
           <div class="body" role="main">
             
   <section id="gdl-on-linux">
-<h1>GDL on Linux<a class="headerlink" href="#gdl-on-linux" title="Permalink to this heading">¶</a></h1>
+<h1>GDL on Linux<a class="headerlink" href="#gdl-on-linux" title="Link to this heading">¶</a></h1>
 <p><a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/GDL-on-Linux/##packages">Packages</a>
 <a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/GDL-on-Linux/##Compilation">Compilation</a>
 <a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/GDL-on-Linux/#script">script build_gdl.sh</a>
 <a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/GDL-on-Linux/#cmake">cmake</a></p>
 <section id="packages">
-<h2>packages:<a class="headerlink" href="#packages" title="Permalink to this heading">¶</a></h2>
+<h2>packages:<a class="headerlink" href="#packages" title="Link to this heading">¶</a></h2>
 <p>As long as a 1.0.2 version is not delivered, please consider that most packages
 don’t really reflect the current status of the code. It would be better to use the weekly unstable releases !</p>
 <ul class="simple">
@@ -89,11 +89,11 @@ don’t really reflect the current status of the code. It would be better to use
 </ul>
 </section>
 <section id="compilation">
-<h2>Compilation:<a class="headerlink" href="#compilation" title="Permalink to this heading">¶</a></h2>
+<h2>Compilation:<a class="headerlink" href="#compilation" title="Link to this heading">¶</a></h2>
 <p><em>or</em> you can compile the code.</p>
 <p>Two mains paths :</p>
 <section id="script">
-<h3>script:<a class="headerlink" href="#script" title="Permalink to this heading">¶</a></h3>
+<h3>script:<a class="headerlink" href="#script" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">1</span></code> using the script <code class="docutils literal notranslate"><span class="pre">scripts/build_gdl.sh</span></code> (assuming you can be <em>sudo</em>)</p>
 <ul class="simple">
 <li><p>Assuming you already have a <a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/C----Compilers">c++ compiler</a> , Cmake (version &gt; 3.2), curl or wget, git</p></li>
@@ -121,7 +121,7 @@ don’t really reflect the current status of the code. It would be better to use
 <p>This efficient and simple way was successfully tested on : Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS; Debian 9, 10, Sid; Fedora 28</p>
 </section>
 <section id="cmake">
-<h3>cmake:<a class="headerlink" href="#cmake" title="Permalink to this heading">¶</a></h3>
+<h3>cmake:<a class="headerlink" href="#cmake" title="Link to this heading">¶</a></h3>
 <p><em>or, traditional way</em>,<code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">2</span></code> using CMake :</p>
 <ul class="simple">
 <li><p>GDL is written in such a way you can compile it fully in user space, without being <em>root</em>, as long as all the mandatory packages (-dev/-devel) are around. If some packages are missing or outdated (e.g. Eigen3), yes, you can use a version in your user space, giving the path as a parameter to CMake (e.g. -DEIGEN3DIR=/path/to/local/Eigen3)</p></li>
