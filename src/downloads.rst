@@ -36,7 +36,6 @@ Binaries
 
     - `Please read this wiki article to run the application on your Mac without trouble <https://gnudatalanguage.github.io/gdl.wiki/GDL-on-OSX.html#installing-gdl-on-osx>`_.
 
-  - Homebrew: :code:`brew install gnudatalanguage`
   - Macports: :code:`port install gnudatalanguage`
   - Fink: :code:`fink install gdl`
     
