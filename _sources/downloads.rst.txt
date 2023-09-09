@@ -34,6 +34,8 @@ Binaries
 
       - `Click here to download <https://github.com/gnudatalanguage/gdl/releases/download/v1.0.3/gdl-v1.0.3-macOS-arm64-standard.dmg>`_
 
+    - `Please read this wiki article to run the application on your Mac without trouble <https://gnudatalanguage.github.io/gdl.wiki/GDL-on-OSX.html#installing-gdl-on-osx>`_.
+
   - Homebrew: :code:`brew install gnudatalanguage`
   - Macports: :code:`port install gnudatalanguage`
   - Fink: :code:`fink install gdl`
