@@ -24,6 +24,16 @@ Binaries
     
 - macOS
 
+  - DMG release (v1.0.3)
+
+    - Intel
+
+      - `Click here to download <https://github.com/gnudatalanguage/gdl/releases/download/v1.0.3/gdl-v1.0.3-macOS-x86_64-standard.dmg>`_
+
+    - Apple Silicon (M1, M1 Pro, M1 Max, M2, etc.)
+
+      - `Click here to download <https://github.com/gnudatalanguage/gdl/releases/download/v1.0.3/gdl-v1.0.3-macOS-arm64-standard.dmg>`_
+
   - Homebrew: :code:`brew install gnudatalanguage`
   - Macports: :code:`port install gnudatalanguage`
   - Fink: :code:`fink install gdl`
