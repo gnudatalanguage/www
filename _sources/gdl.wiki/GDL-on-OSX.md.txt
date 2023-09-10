@@ -4,7 +4,7 @@
 **NEW: the installers for latest GDL (1.0.3) are available on the [GDL Homepage](https://gnudatalanguage.github.io/), there is a version for x86_64 and one for arm64 (new M1,M2 macs).**
 **You can also download the unstable [weekly DMG](https://github.com/gnudatalanguage/gdl/releases/download/weekly-release/gdl-macOS-x86_64-standard.dmg)** and use it, but it is for x86_64 only. 
 
-The application is not permitted to run by Apple, so you must start it by 'right-clicking' (Control-Click) it and choose "Run".
+The application is not signed (permitted to run by Apple), so you must start it by 'right-clicking' (Control-Click) it and choose "Run".
 
 Here is a simple solution to enable it permanently:
 1. download the dmg file, open it (it looks like a folder). Put "GNU Data Language" in the Applications folder. (Put "GDL Workbench" too).
@@ -12,7 +12,8 @@ Here is a simple solution to enable it permanently:
 1. type `spctl --add /Applications/GNU Data Language.app` .
 1. Enter your password in the popup asking for permission.
 1. Now you can use the `GNU Data Language` of the `Applications` folder without trouble.
-1. You can do the same for `GDL Workbench`
+1. You can do the same for `GDL Workbench`  
+This worked for us, please report if there was a problem.
 
 # But if you prefer doing it the hard way:
 
@@ -50,10 +51,10 @@ GDL is built with wxWidgets graphic interface, but the X11 graphic windows are s
 This script is very frequently tested on OSX 10.14.6 and 11.3. Brew may have side effects (updates are frequent and quite long, may have conflict if machine with multi-users, projects asking for login/pass). Usually just reading the messages, using 'brew doctor', passing when login/pass should be enough.
 
 
-## notes
+## notes 
 * GDL uses plplot. plplot NEEDS to be compiled with option DYNDRIVERS=ON . This is *not* what Brew or other installers provide. You need to recompile and install plplot. The script build_gdl.sh of 'Way 1' does it, applying patches in gdl/scripts/deps/macos .
 
-## compilation notes
+## compilation notes (not necessary relevant anymore!)
 
 * Depending of OSX version, default Clang may or not come with OpenMP. If OpenMP is not around, we need to deactivated it : 
 ```
@@ -83,4 +84,4 @@ But in the above, you can remove `-DGEOTIFF=OFF -DHDF=OFF  -DUDUNITS2=OFF -DGRIB
 
 Since an upgrade of OSX, my `git pull` was not OK any more (and the ssh -X too ... stupid system). A effective solution for Git was : 
 `git config --global url.https://github.com/.insteadOf git://github.com/`
-(from [stackoverflow](https://stackoverflow.com/questions/72486457/fatal-unable-to-connect-to-github-com-github-com0-140-82-121-4-errno-unkno)
+(from [stackoverflow](https://stackoverflow.com/questions/72486457/fatal-unable-to-connect-to-github-com-github-com0-140-82-121-4-errno-unkno) )

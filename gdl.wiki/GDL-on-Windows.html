@@ -58,8 +58,8 @@
 <p><strong>Using the Windows Installer is almost the only way today</strong> to insure modified drivers for the plplot library to be found by the executable. Other installations (such as decribed below) may or not, depending on the history, deliver the correct driver at the correct location, making GDL unstable. As using an installer is normal for normal users, we feel this complex situation is correctly handled for now.</p>
 <p>Currently, there are three different types of builds:</p>
 <ul class="simple">
-<li><p>mini: only includes mandatory libraries to run GDL.</p></li>
-<li><p>full: includes all optional libraries except MPI.</p></li>
+<li><p>mini: only includes mandatory libraries to run a very minimal and barely useable GDL.</p></li>
+<li><p>full: includes all optional libraries except MPI. This is the one you should use.</p></li>
 <li><p>full-msmpi: includes all optional libraries + MPI. This requires Microsoft MPI pre-installed (https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi). This version of GDL is slightly slow at startup due to the initialization of MPI.</p></li>
 </ul>
 </section>
