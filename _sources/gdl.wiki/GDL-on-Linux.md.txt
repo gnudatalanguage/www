@@ -23,6 +23,8 @@ don't really reflect the current status of the code. It would be better to use t
   - https://packages.gentoo.org/packages/dev-lang/gdl 1.0.0 (too old)
 - Arch:
   - https://aur.archlinux.org/packages/gnudatalanguage/ **1.0.1**
+- OpenSUSE:
+  - https://software.opensuse.org//download.html?project=science&package=gdl-language
 
 At the moment, you can
 -  download the unstable weekly build binaries from https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release, also see [#957](https://github.com/gnudatalanguage/gdl/pull/957)
