@@ -7,7 +7,7 @@ button of the GitHub repo, your cloning will be incomplete.
 
 Starting from [#1484](https://github.com/gnudatalanguage/gdl/pull/1484) gdl uses **git submodules**.
 
-To clone gdl, type: `git clone --recursive https://github.com/gnudatalangage/gdl.git `
+To clone gdl, type: `git clone --recursive https://github.com/gnudatalanguage/gdl.git `
 
 To update an already existing (cloned) gdl repo, do:
 * `git submodule update` 
