@@ -1,5 +1,6 @@
 # GDL on OSX
 # INSTALLING GDL ON OSX
+** WARNING: Problems reported with installer. Please ignore the "NEW" recipe below.
 
 **NEW: the installers for latest GDL (1.0.3) are available on the [GDL Homepage](https://gnudatalanguage.github.io/), there is a version for x86_64 and one for arm64 (new M1,M2 macs).**
 **You can also download the unstable [weekly DMG](https://github.com/gnudatalanguage/gdl/releases/download/weekly-release/gdl-macOS-x86_64-standard.dmg)** and use it, but it is for x86_64 only. 
