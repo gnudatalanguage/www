@@ -106,7 +106,7 @@ don’t really reflect the current status of the code. It would be better to use
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">prep</span></code> will install the required libraries. (If you are not <em>sudoer</em> you will get a list of libs. your admin. will installed for you.)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">configure</span></code> will run Cmake to prepare the Make file</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">build</span></code> will build gdl in <code class="docutils literal notranslate"><span class="pre">build</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">install</span></code>. This is the simplest way.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">install</span></code>. This is the simplest way to be sure the paths and the links to the libs are OK.</p></li>
 </ul>
 <p>A summary for Ubuntu/Debian (for RH/Fedora, just change apt-get by rpm …):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">git</span>
@@ -121,9 +121,11 @@ don’t really reflect the current status of the code. It would be better to use
 <span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build_gdl</span><span class="o">.</span><span class="n">sh</span> <span class="n">configure</span>
 <span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build_gdl</span><span class="o">.</span><span class="n">sh</span> <span class="n">build</span>
 <span class="p">(</span><span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build_gdl</span><span class="o">.</span><span class="n">sh</span> <span class="n">check</span><span class="p">)</span>
+<span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build_gdl</span><span class="o">.</span><span class="n">sh</span> <span class="n">install</span>  
 </pre></div>
 </div>
-<p>This efficient and simple way was successfully tested on : Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS; Debian 9, 10, Sid; Fedora 28</p>
+<p>then you should be able to start GDL by : <code class="docutils literal notranslate"><span class="pre">./install/bin/gdl</span></code></p>
+<p>This efficient and simple way was successfully tested on : Ubuntu 16.04 LTS, 18.04 LTS (may have a glitch due to Magicks libs), 20.04 LTS, 22.04 LTS; Debian 9, 10, Sid; Fedora 28</p>
 </section>
 <section id="cmake">
 <h3>cmake:<a class="headerlink" href="#cmake" title="Link to this heading">¶</a></h3>
