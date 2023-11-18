@@ -51,32 +51,17 @@
 </section>
 <section id="installing-gdl-on-osx">
 <h1>INSTALLING GDL ON OSX<a class="headerlink" href="#installing-gdl-on-osx" title="Link to this heading">¶</a></h1>
-<p>** WARNING: Problems reported with installer. Please ignore the “NEW” recipe below.</p>
-<p><strong>NEW: the installers for latest GDL (1.0.3) are available on the <a class="reference external" href="https://gnudatalanguage.github.io/">GDL Homepage</a>, there is a version for x86_64 and one for arm64 (new M1,M2 macs).</strong>
-<strong>You can also download the unstable <a class="reference external" href="https://github.com/gnudatalanguage/gdl/releases/download/weekly-release/gdl-macOS-x86_64-standard.dmg">weekly DMG</a></strong> and use it, but it is for x86_64 only.</p>
-<p>The application is not signed (permitted to run by Apple), so you must start it by ‘right-clicking’ (Control-Click) it and choose “Run”.</p>
-<p>Here is a simple solution to enable it permanently:</p>
-<ol class="simple">
-<li><p>download the dmg file, open it (it looks like a folder). Put “GNU Data Language” in the Applications folder. (Put “GDL Workbench” too).</p></li>
-<li><p>open a terminal</p></li>
-<li><p>type <code class="docutils literal notranslate"><span class="pre">spctl</span> <span class="pre">--add</span> <span class="pre">/Applications/GNU</span> <span class="pre">Data</span> <span class="pre">Language.app</span></code> .</p></li>
-<li><p>Enter your password in the popup asking for permission.</p></li>
-<li><p>Now you can use the <code class="docutils literal notranslate"><span class="pre">GNU</span> <span class="pre">Data</span> <span class="pre">Language</span></code> of the <code class="docutils literal notranslate"><span class="pre">Applications</span></code> folder without trouble.</p></li>
-<li><p>You can do the same for <code class="docutils literal notranslate"><span class="pre">GDL</span> <span class="pre">Workbench</span></code><br />This worked for us, please report if there was a problem.</p></li>
-</ol>
-</section>
-<section id="but-if-you-prefer-doing-it-the-hard-way">
-<h1>But if you prefer doing it the hard way:<a class="headerlink" href="#but-if-you-prefer-doing-it-the-hard-way" title="Link to this heading">¶</a></h1>
+<hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">0</span></code></p>
-<p>GDL is available from:</p>
+<p>GDL may be available, but check carefully the version, from:</p>
 <ul class="simple">
 <li><p>[Homebrew] look for homebrew-science, homebrew’s gdl is another thing (Gnome Docking Library)!</p></li>
 <li><p><a class="reference external" href="https://www.macports.org/">Macports</a>: known as gnudatalanguage, version 1.0.0-rc3 thanks &#64;tenomoto – version for M1 available</p></li>
 <li><p><a class="reference external" href="http://finkproject.org/pdb/package.php/gdl">Fink</a>, thanks &#64;Seb</p></li>
 </ul>
-<p><strong>But watch carefully, those distributions may be well out-of-date by now</strong>, as GDL is continuously improving (see what happened on our Github repo since)</p>
+<p><strong>those distributions may be well out-of-date by now</strong>, as GDL is continuously improving (see what happened on our Github repo since)</p>
 <hr class="docutils" />
-<p><em>or</em> <code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">1</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Way</span> <span class="pre">1</span></code></p>
 <ol class="simple">
 <li><p>de-activate any conda (miniconda, anaconda) related env.</p></li>
 <li><p><a class="reference external" href="https://docs.brew.sh/Installation">install Homebrew using the one-liner command</a></p></li>
@@ -92,10 +77,13 @@
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">prep</span></code> will install the required libraries. The script recompiles and install plplot, this is mandatory as the Homebrew plplot is not compiled with adequate options.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">configure</span></code> will prepare the make file for compilation in next step.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">build</span></code> will build gdl in <code class="docutils literal notranslate"><span class="pre">build</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">build</span></code> will build gdl in <code class="docutils literal notranslate"><span class="pre">build</span></code>
+…
+<strong>At this point, Apple Silicon users should follow</strong> <a class="reference external" href="https://github.com/gnudatalanguage/gdl/discussions/1675">these instructions</a> since there are issues on this kind of machine for now.
+…</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">install</span></code> will install gdl in $HOME/gdl/install/bin and its dependencies.<br />At this point, one can run gdl in a terminal à la unix, typing <code class="docutils literal notranslate"><span class="pre">$HOME/gdl/install/bin/gdl</span></code> . But it is not an app.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">pack</span></code> creates an app</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">prep_deploy</span></code> creates a dmg file, than can be mounted by the system, and the Apps it contain can be installed in Applications, stay in the Dock and be started by clicking on it. At that stage, homebrew and all the gdl folder can be removed, the GDL app will still work.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">prep_deploy</span></code> creates a dmg file, than can be mounted by the system, and the Apps it contain can be installed in Applications, stay in the Dock and be started by clicking on it. At that stage, homebrew and all the gdl folder can be removed, the GDL app should still work.</p></li>
 </ul>
 <p>GDL is built with wxWidgets graphic interface, but the X11 graphic windows are still there and can be called by a switch in the gdl command, see output of <code class="docutils literal notranslate"><span class="pre">gdl</span> <span class="pre">-h</span></code>. Of course to use X11 you need to independently install XQuartz.</p>
 <p>This script is very frequently tested on OSX 10.14.6 and 11.3. Brew may have side effects (updates are frequent and quite long, may have conflict if machine with multi-users, projects asking for login/pass). Usually just reading the messages, using ‘brew doctor’, passing when login/pass should be enough.</p>
@@ -105,8 +93,8 @@
 <li><p>GDL uses plplot. plplot NEEDS to be compiled with option DYNDRIVERS=ON . This is <em>not</em> what Brew or other installers provide. You need to recompile and install plplot. The script build_gdl.sh of ‘Way 1’ does it, applying patches in gdl/scripts/deps/macos .</p></li>
 </ul>
 </section>
-<section id="compilation-notes-not-necessary-relevant-anymore">
-<h2>compilation notes (not necessary relevant anymore!)<a class="headerlink" href="#compilation-notes-not-necessary-relevant-anymore" title="Link to this heading">¶</a></h2>
+<section id="not-necessary-relevant-anymore-compilation-notes">
+<h2><strong>not necessary relevant anymore compilation notes (!)</strong><a class="headerlink" href="#not-necessary-relevant-anymore-compilation-notes" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Depending of OSX version, default Clang may or not come with OpenMP. If OpenMP is not around, we need to deactivated it :</p></li>
 </ul>
@@ -139,6 +127,10 @@
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">url.https://github.com/.insteadOf</span> <span class="pre">git://github.com/</span></code>
 (from <a class="reference external" href="https://stackoverflow.com/questions/72486457/fatal-unable-to-connect-to-github-com-github-com0-140-82-121-4-errno-unkno">stackoverflow</a> )</p>
 </section>
+<section id="installers">
+<h2>Installers<a class="headerlink" href="#installers" title="Link to this heading">¶</a></h2>
+<p>You can download the unstable <a class="reference external" href="https://github.com/gnudatalanguage/gdl/releases/download/weekly-release/gdl-macOS-x86_64-standard.dmg">weekly DMG</a>** and use it, but it is for x86_64 only, and your OS version must be compatible. Help to make installers for different versions of OS and for Apple Silicon would be appreciated.</p>
+</section>
 </section>
 
 
@@ -164,7 +156,6 @@
 <li class="toctree-l2"><a class="reference internal" href="GDL-on-Linux.html">GDL on Linux</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">GDL on OSX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installing-gdl-on-osx">INSTALLING GDL ON OSX</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#but-if-you-prefer-doing-it-the-hard-way">But if you prefer doing it the hard way:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GDL-on-Windows.html">GDL on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Home.html">Home</a></li>
 <li class="toctree-l2"><a class="reference internal" href="How-to-get-a-given-Pull-Request-%28PR%29.html">How to get a given Pull Request (PR)</a></li>
