@@ -13,8 +13,7 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Local test coverage of GDL using gcov lcov" href="Local-test-coverage-of-GDL-using-gcov-lcov.html" />
-    <link rel="prev" title="How to get a given Pull Request (PR)" href="How-to-get-a-given-Pull-Request-%28PR%29.html" /> 
+    <link rel="prev" title="ToDo list" href="ToDo-list.html" /> 
   </head><body>
   <div id="wrap">
     <div id="header">
@@ -46,23 +45,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="known-issues">
-<h1>Known issues<a class="headerlink" href="#known-issues" title="Link to this heading">¶</a></h1>
-<ul class="simple">
-<li><p>Did you use the<code class="docutils literal notranslate"> <span class="pre">--recursive</span></code> while cloning gdl ? Otherwise it will not compile.</p></li>
-<li><p>GDL now uses by default the wxWidgets engine for all graphics, plot windows and widgets. You can optionally use the X11 driver (for PLOTS only), first by enabling X11 during the compilation (<code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">...</span> <span class="pre">-DX11=ON</span> <span class="pre">...</span></code>)  then by calling GDL with the <code class="docutils literal notranslate"><span class="pre">--no-use-wx</span></code> flag or setting the env. var <code class="docutils literal notranslate"><span class="pre">GDL_DISABLE_WX_PLOTS</span></code>. X11 is not available under Windows.</p></li>
-</ul>
-<p>There are still issues with the wxWidgets engine, that you may encounter:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">DEVICE,SET_GRAPHICS_FUNCTION=x</span></code> will not work correctly due to the absence of those basic graphic functions in the PANGO library, and in consequence in the in wxWidgets3.x. Some utilities (Graffer, Look) use this command to draw crosshairs on plots, and this PANGO ‘feature’ prevents crosshair lines to be properly erased, making a mess of the plot. It is advised for the time being to remove the crosshair generation directly by editing the procedure and commenting the relevant code lines. There are terribly few cases where the basic pointer does not suffice. For procedures that use <code class="docutils literal notranslate"><span class="pre">DEVICE,SET_GRAPHICS_FUNCTION</span></code> on PLOT windows (such as BOX_CURSOR) just use the X11 driver for plots as described above.</p></li>
-<li><p>If you experience a slowness in plots (like <code class="docutils literal notranslate"><span class="pre">SURFACE,dist(64)</span></code> taking minutes to plot!) , it is because your installation prevents GDL to use its “own” version of plplot’s drivers. There will be a message at the start of GDL: <code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">drivers</span> <span class="pre">not</span> <span class="pre">found</span> <span class="pre">---</span> <span class="pre">using</span> <span class="pre">default</span> <span class="pre">ones.</span></code> .</p></li>
-<li><p>Misshaped Hershey Fonts in PostScript device: this is a plplot bug, however see this <a class="reference external" href="https://github.com/gnudatalanguage/gdl/pull/1022#issuecomment-1614428386">workaround</a></p></li>
-</ul>
-<p>Older issues, not sure if they still hold:</p>
-<ul class="simple">
-<li><p>In presence of Anaconda (a python installer) there may be some troubles compiling GDL, see <a class="reference external" href="https://github.com/gnudatalanguage/gdl/issues/780#issuecomment-642943543">here</a></p></li>
-<li><p>old GCC. It is still possible to compile GDL 1.0 versions (rc1, rc2, rc3) with old GC 4.8 versions (e.g. gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4)  but <em>make check</em> show that some numerical functions misbehave.</p></li>
-</ul>
+  <section id="few-basics-on-benchmark">
+<h1>few basics on benchmark<a class="headerlink" href="#few-basics-on-benchmark" title="Link to this heading">¶</a></h1>
+<p>All the benchmarks codes are under testsuite/benchmarks</p>
+<p><img alt="bench_basic_FLOAT_Linux_planck4" src="https://github.com/gnudatalanguage/gdl/assets/38264661/21691381-b4d2-449e-b7e9-533195874b11" />
+<img alt="bench_basic_DOUBLE_Linux_planck4" src="https://github.com/gnudatalanguage/gdl/assets/38264661/c9d0c218-759b-4b3c-8784-f6447438ef92" /></p>
 </section>
 
 
@@ -91,13 +78,13 @@
 <li class="toctree-l2"><a class="reference internal" href="GDL-on-Windows.html">GDL on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Home.html">Home</a></li>
 <li class="toctree-l2"><a class="reference internal" href="How-to-get-a-given-Pull-Request-%28PR%29.html">How to get a given Pull Request (PR)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Known issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Known-issues.html">Known issues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Local-test-coverage-of-GDL-using-gcov-lcov.html">Local test coverage of GDL using gcov lcov</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Packaged-versions.html">Packaged versions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tested-systems-%28Linux%2C-BSD%2C-OSX%2C-MSwin%29.html">Tested systems (Linux, BSD, OSX, MSwin)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Third-party-librairies.html">Third party librairies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ToDo-list.html">ToDo list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="few-basics-on-benchmark.html">few basics on benchmark</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">few basics on benchmark</a></li>
 </ul>
 </li>
 </ul>

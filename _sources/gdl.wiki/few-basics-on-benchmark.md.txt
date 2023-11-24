@@ -1,0 +1,5 @@
+# few basics on benchmark
+All the benchmarks codes are under testsuite/benchmarks 
+
+![bench_basic_FLOAT_Linux_planck4](https://github.com/gnudatalanguage/gdl/assets/38264661/21691381-b4d2-449e-b7e9-533195874b11)
+![bench_basic_DOUBLE_Linux_planck4](https://github.com/gnudatalanguage/gdl/assets/38264661/c9d0c218-759b-4b3c-8784-f6447438ef92)
