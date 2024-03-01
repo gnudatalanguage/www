@@ -1,9 +1,10 @@
 # Known issues
 - Did you use the` --recursive` while cloning gdl ? Otherwise it will not compile.
 
-- GDL now uses by default the wxWidgets engine for all graphics, plot windows and widgets. You can optionally use the X11 driver (for PLOTS only), first by enabling X11 during the compilation (`cmake ... -DX11=ON ...`)  then by calling GDL with the `--no-use-wx` flag or setting the env. var `GDL_DISABLE_WX_PLOTS`. X11 is not available under Windows.
+- GDL now uses by default the wxWidgets engine for all graphics, plot windows and widgets. You can optionally use the X11 driver (for PLOTS only), first by enabling X11 during the compilation (`cmake ... -DX11=ON ...`)  then by calling GDL with the `-X` flag or setting the env. var `GDL_DISABLE_WX_PLOTS`. X11 is not available under Windows.
 
-There are still issues with the wxWidgets engine, that you may encounter:
+There are still issues with the wxWidgets engine under Linux, that you may encounter:
+  - wxWidgets (using GTK) do not function well with fvwm2 (window positioning mainly).
   - `DEVICE,SET_GRAPHICS_FUNCTION=x` will not work correctly due to the absence of those basic graphic functions in the PANGO library, and in consequence in the in wxWidgets3.x. Some utilities (Graffer, Look) use this command to draw crosshairs on plots, and this PANGO 'feature' prevents crosshair lines to be properly erased, making a mess of the plot. It is advised for the time being to remove the crosshair generation directly by editing the procedure and commenting the relevant code lines. There are terribly few cases where the basic pointer does not suffice. For procedures that use `DEVICE,SET_GRAPHICS_FUNCTION` on PLOT windows (such as BOX_CURSOR) just use the X11 driver for plots as described above. 
   - If you experience a slowness in plots (like `SURFACE,dist(64)` taking minutes to plot!) , it is because your installation prevents GDL to use its "own" version of plplot's drivers. There will be a message at the start of GDL: `Local drivers not found --- using default ones.` . 
 
