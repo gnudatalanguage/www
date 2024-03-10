@@ -10,6 +10,8 @@ There are still issues with the wxWidgets engine under Linux, that you may encou
 
   - Misshaped Hershey Fonts in PostScript device: this is a plplot bug, however see this [workaround](https://github.com/gnudatalanguage/gdl/pull/1022#issuecomment-1614428386)
 
+- gcc 13 (and perhaps other compiler) may report "multiply defined" error messages at link time and refuse to link: add `-DSPLIT_SOURCES_FILES=OFF` to the `cmake` command to solve this. Of course this means you cannot rely totally on the build_gdl.sh command file to build gdl. Instead, go to the gdl/build folder, type `cmake -DSPLIT_SOURCES_FILES=OFF ..`, then go back to the home directory and re-type `gdl/src/build_gdl.sh build`.  
+
 Older issues, not sure if they still hold:
 
 - In presence of Anaconda (a python installer) there may be some troubles compiling GDL, see [here](https://github.com/gnudatalanguage/gdl/issues/780#issuecomment-642943543)

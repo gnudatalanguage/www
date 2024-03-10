@@ -49,7 +49,9 @@
   <section id="c-compilers">
 <h1>C Compilers<a class="headerlink" href="#c-compilers" title="Link to this heading">¶</a></h1>
 <ul class="simple">
-<li><p>GDL can be compile with : GCC (GNU C Compiler), Clang (LLVM), icc (Intel C compiler).</p></li>
+<li><p>Normally the general user does not have to bother with the following, as the distribution, the installer, the OSX DMG or the <code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span></code> procedure will do the required job.</p></li>
+<li><p>GDL can be compiled with : GCC (GNU C Compiler), Clang (LLVM), icc (Intel C compiler).</p></li>
+<li><p>Some compiler versions or under some platforms may need special CMake FLAGS to be convinced to work… See <a class="reference external" href="https://github.com/gnudatalanguage/gdl/wiki/Known-issues">Known Issues</a></p></li>
 <li><p>no significant differences in performances have been shown between the three on same computer. What is critical for the benchmaks is to activate OpenMP on multicores, and to compile with Eigen3 !!</p></li>
 <li><p>using CMake flags, it is quite easy to switch from one compiler to another. E.g. for CLang.</p></li>
 </ul>
