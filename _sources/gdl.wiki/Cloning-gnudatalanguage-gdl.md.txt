@@ -10,5 +10,5 @@ Starting from [#1484](https://github.com/gnudatalanguage/gdl/pull/1484) gdl uses
 To clone gdl, type: `git clone --recursive https://github.com/gnudatalanguage/gdl.git `
 
 To update an already existing (cloned) gdl repo, do:
-* `git submodule update` 
+* `git submodule update --init` 
 * or `git pull --recurse-submodules` 

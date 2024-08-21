@@ -81,9 +81,12 @@
 …
 <strong>At this point, Apple Silicon users should follow</strong> <a class="reference external" href="https://github.com/gnudatalanguage/gdl/discussions/1675">these instructions</a> since there are issues on this kind of machine for now.
 …</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">install</span></code> will install gdl in $HOME/gdl/install/bin and its dependencies.<br />At this point, one can run gdl in a terminal à la unix, typing <code class="docutils literal notranslate"><span class="pre">$HOME/gdl/install/bin/gdl</span></code> . But it is not an app.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">install</span></code> will install gdl in $HOME/gdl/install/bin and its dependencies.<br />At this point, one can run gdl in a terminal à la unix, typing <code class="docutils literal notranslate"><span class="pre">$HOME/gdl/install/bin/gdl</span></code> . It is not an app, but it can be sufficient.</p></li>
+</ul>
+<p>In some cases (using widgets) it may be necessary to use gdl in form of an app:</p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">pack</span></code> creates an app</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">prep_deploy</span></code> creates a dmg file, than can be mounted by the system, and the Apps it contain can be installed in Applications, stay in the Dock and be started by clicking on it. At that stage, homebrew and all the gdl folder can be removed, the GDL app should still work.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build_gdl.sh</span> <span class="pre">prep_deploy</span></code> creates a dmg file, than can be mounted by the system, and the Apps it contain can be installed in Applications stay in the Dock and are started by clicking on it. At that stage, the gdl folder can be removed, but the GDL app will need some installed dependencies in homebrew that are not currently contained in the App (help welcome!).</p></li>
 </ul>
 <p>GDL is built with wxWidgets graphic interface, but the X11 graphic windows are still there and can be called by a switch in the gdl command, see output of <code class="docutils literal notranslate"><span class="pre">gdl</span> <span class="pre">-h</span></code>. Of course to use X11 you need to independently install XQuartz.</p>
 <p>This script is very frequently tested on OSX 10.14.6 and 11.3. Brew may have side effects (updates are frequent and quite long, may have conflict if machine with multi-users, projects asking for login/pass). Usually just reading the messages, using ‘brew doctor’, passing when login/pass should be enough.</p>
@@ -129,7 +132,7 @@
 </section>
 <section id="installers">
 <h2>Installers<a class="headerlink" href="#installers" title="Link to this heading">¶</a></h2>
-<p>You can download the unstable <a class="reference external" href="https://github.com/gnudatalanguage/gdl/releases/download/weekly-release/gdl-macOS-x86_64-standard.dmg">weekly DMG</a>** and use it, but it is for x86_64 only, and your OS version must be compatible. Help to make installers for different versions of OS and for Apple Silicon would be appreciated.</p>
+<p>You can download the unstable <a class="reference external" href="https://github.com/gnudatalanguage/gdl/releases/download/weekly-release/gdl-macOS-x86_64-standard.dmg">weekly DMG</a>** and use it, however some dependencies not copied to the DMG will need to install at least plplot, so in practice this is only possible for somebody who has once built gdl using build_gdl.sh</p>
 </section>
 </section>
 

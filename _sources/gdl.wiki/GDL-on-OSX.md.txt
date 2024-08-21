@@ -29,9 +29,11 @@ GDL may be available, but check carefully the version, from:
 **At this point, Apple Silicon users should follow** [these instructions](https://github.com/gnudatalanguage/gdl/discussions/1675) since there are issues on this kind of machine for now.
 ...
   - `build_gdl.sh install` will install gdl in $HOME/gdl/install/bin and its dependencies.  
-     At this point, one can run gdl in a terminal à la unix, typing `$HOME/gdl/install/bin/gdl` . But it is not an app.
+     At this point, one can run gdl in a terminal à la unix, typing `$HOME/gdl/install/bin/gdl` . It is not an app, but it can be sufficient. 
+
+In some cases (using widgets) it may be necessary to use gdl in form of an app:
   - `build_gdl.sh pack` creates an app
-  - `build_gdl.sh prep_deploy` creates a dmg file, than can be mounted by the system, and the Apps it contain can be installed in Applications, stay in the Dock and be started by clicking on it. At that stage, homebrew and all the gdl folder can be removed, the GDL app should still work.
+  - `build_gdl.sh prep_deploy` creates a dmg file, than can be mounted by the system, and the Apps it contain can be installed in Applications stay in the Dock and are started by clicking on it. At that stage, the gdl folder can be removed, but the GDL app will need some installed dependencies in homebrew that are not currently contained in the App (help welcome!).
 
 GDL is built with wxWidgets graphic interface, but the X11 graphic windows are still there and can be called by a switch in the gdl command, see output of `gdl -h`. Of course to use X11 you need to independently install XQuartz.
 
@@ -75,4 +77,4 @@ Since an upgrade of OSX, my `git pull` was not OK any more (and the ssh -X too .
 
 
 ## Installers
-You can download the unstable [weekly DMG](https://github.com/gnudatalanguage/gdl/releases/download/weekly-release/gdl-macOS-x86_64-standard.dmg)** and use it, but it is for x86_64 only, and your OS version must be compatible. Help to make installers for different versions of OS and for Apple Silicon would be appreciated.
+You can download the unstable [weekly DMG](https://github.com/gnudatalanguage/gdl/releases/download/weekly-release/gdl-macOS-x86_64-standard.dmg)** and use it, however some dependencies not copied to the DMG will need to install at least plplot, so in practice this is only possible for somebody who has once built gdl using build_gdl.sh
