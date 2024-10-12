@@ -22,6 +22,7 @@ jobs:
           python-version: '3.x'
       - name: Build
         run: |
+          sudo python3 -m pip config set global.break-system-packages true
           sudo pip3 install sphinx recommonmark
           .ci/retrieve_readme.sh
           .ci/retrieve_wiki.sh
