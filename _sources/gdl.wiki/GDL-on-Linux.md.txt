@@ -7,22 +7,21 @@
 
 ## packages:
 
-As long as a 1.0.2 version is not delivered, please consider that most packages
-don't really reflect the current status of the code. It would be better to use the weekly unstable releases !
+Check the packaged version before installing! Most packages are always well beyond the current evoloution of the code. It may be better to use the releases on Github (including the weekly ones), even if it means installing by hand.
 
 - Fedora: https://src.fedoraproject.org/rpms/gdl **actively maintained.**
-- Mageia: https://madb.mageia.org/package/show/application/0/arch/x86_64/name/gnudl **1.0.0**
+- Mageia: https://madb.mageia.org/package/show/application/0/arch/x86_64/name/gnudl 
 - Debian: 
-  - https://packages.debian.org/stable/gnudatalanguage **1.0.1**
-  - https://packages.debian.org/unstable/gnudatalanguage **1.0.6**
-  - https://packages.debian.org/python3-gdl **1.0.6** in 'unstable'
+  - https://packages.debian.org/stable/gnudatalanguage
+  - https://packages.debian.org/unstable/gnudatalanguage
+  - https://packages.debian.org/python3-gdl in 'unstable'
 - Ubuntu:
-  - http://packages.ubuntu.com/gnudatalanguage 1.0.4 in noble
-  - https://packages.ubuntu.com/python3-gdl 1.0.4 in noble
+  - http://packages.ubuntu.com/gnudatalanguage
+  - https://packages.ubuntu.com/python3-gdl
 - Gentoo:
-  - https://packages.gentoo.org/packages/dev-lang/gdl 1.0.0 (too old)
+  - https://packages.gentoo.org/packages/dev-lang/gdl
 - Arch:
-  - https://aur.archlinux.org/packages/gnudatalanguage/ **1.0.1**
+  - https://aur.archlinux.org/packages/gnudatalanguage
 - OpenSUSE:
   - https://software.opensuse.org//download.html?project=science&package=gdl-language
 
@@ -75,11 +74,8 @@ This efficient and simple way was successfully tested on : Ubuntu 16.04 LTS, 18.
 
 - GDL now requests CMake 3+. On some old systems (Debian 9, U 14.04) you have access to CMake 3+ with package cmake3 or equivalent module (on HPC with module) 
 
-
-- You will need the wxWidgets library and the plplot drivers for wxWidgets. Sometimes the plplot drivers are not in the plplot package but in a different one, say, `plplot-driver-wxwidgets` . This is distribution-dependent, search the web.
-
-- `plplot` **NEEDS to be compiled with option `-DENABLE_DYNDRIVERS=ON`** since GDL uses his own (patched) plplot drivers, they come with the GDL code. Hence the need for a plplot library compiled in such a way as to permit loadable drivers. Normally plplot is distributed this way under linux.
-
+- The **wxWidgets library is mandatory** (unless you know how to tweak the cmake). **X11** will be supported in parallel if option `-DX11=O`N is set when calling `cmake`. GDL starts with the X11 interface (for plots, not widgets!) when called as "`gdl -X`".
+ 
 - When compiling the first time, you may be blocked because one package is missing. After installing it, it is **mandatory** to clean the cache before running again cmake (`rm -f CMakeCache.txt`)
 
 - Compilation. Once all the packages are around, it is quite fast on multi-cores :)

@@ -1,13 +1,11 @@
 # GDL on Windows
 ## Download the ```GDL Installer```
 
-- Found in [Weekly builds](https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release)
+- Found in [Weekly builds](https://github.com/gnudatalanguage/gdl/releases/tag/weekly-release) and all our [Releases](https://github.com/gnudatalanguage/gdl/releases)
 
 It will install GDL on your machine automatically. For 64 bit builds, you can also choose whether to install ```GDL Workbench```, an Eclipse-based IDE for GDL (for more information, visit https://github.com/gnudatalanguage/gdlde). 
 
 Do not panic, if the weekly relase has no windows installer, you can still get one using the compilation method below.
-
-**Using the Windows Installer is almost the only way today** to insure modified drivers for the plplot library to be found by the executable. Other installations (such as decribed below) may or not, depending on the history, deliver the correct driver at the correct location, making GDL unstable. As using an installer is normal for normal users, we feel this complex situation is correctly handled for now.
 
 Currently, there are three different types of builds:
 - mini: only includes mandatory libraries to run a very minimal and barely useable GDL.
@@ -60,4 +58,4 @@ $ gdl/scripts/build_gdl.sh prep_deploy
 ```
 It is recommended to use `gdl/scripts/build_gdl.sh build` (instead of just "make") anytime you download a new version of GDL sources, as the script adds magic of its own.
 
-**IMPORTANT:** You may be able to call directly `$ gdl` once step 2 is done, but this does not mean you'll have a working plplot (hence: graphic outputs) installation. We recommend to always use the installer just made above (`gdl/scripts/build_gdl.sh pack`) to install the new GDL, this in particular will solve the problem of correct plplot graphics driver.
+**IMPORTANT:** You may be able to call directly `$ gdl` once step 2 is done, but we recommend to build and use the installer just made above (`gdl/scripts/build_gdl.sh pack`) to install the new GDL (more windows-like).
