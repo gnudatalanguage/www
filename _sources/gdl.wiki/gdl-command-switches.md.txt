@@ -1,0 +1,24 @@
+# gdl command switches
+GDL reproduces all the IDL switches (most of them being without object as GDL has an Open Source code)
+
+One can change the behaviour of GDL using the following switches:
+  * **--fakerelease X.y** : pretend that `!VERSION.RELEASE` is X.y
+  * **--fussy** :           implies that procedures adhere with modern IDL, where "()" are for functions and "[]" are for arrays.
+                     This speeds up (sometimes terribly) compilation but choke on every use of "()" with arrays.
+                     Conversion of procedures to modern IDL can be done with D. Landsman's idlv4_to_v5 procedure.
+                     Use enviromnment variable "`GDL_IS_FUSSY`" to set up permanently this feature.
+  * **--sloppy** :          Sets the traditional (default) compiling option where "()"  can be used both with functions and arrays.
+                     Needed to counteract temporarily the effect of the enviromnment variable "`GDL_IS_FUSSY`".
+  * **--MAC** :             Graphic device will be called '`MAC`' on MacOSX. (default: 'X')
+  * **[--no-use-wx | -X]** : Tells GDL not to use WxWidgets graphics and resort to X11 (if available).
+                     Also enabled by setting the environment variable `GDL_DISABLE_WX_PLOTS` to a non-null value.
+  * **--notebook** :        Force SVG-only device, used only when GDL is a Python Notebook Kernel.
+  * **--widget-compat** :   Tells GDL to use a default (rather ugly) fixed pitch font for compatiblity with IDL widgets.
+                     Also enabled by setting the environment variable `GDL_WIDGET_COMPAT` to a non-null value.
+                     Using this option may render some historical widgets more readable (as they are based on fixed sizes).
+  * -**-no-dSFMT**  :       Tells GDL _not to use_ double precision SIMD oriented Fast Mersenne Twister(dSFMT) for random doubles.
+                     Also disable by setting the environment variable `GDL_NO_DSFMT` to a non-null value.
+  * **--with-eigen-transpose** : lets GDL use Eigen::transpose and related functions instead of our accelerated transpose function. Normally slower.
+  * **--smart-tpool**  :    switch to a mode where the number of threads is adaptive (experimental). Should enable better perfs on many core machines.
+  * **--silent **  :        Supresses some messages (mainly "Compiled Module XXX") .
+
